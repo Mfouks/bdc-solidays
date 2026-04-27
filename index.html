@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BDC Solidays 2026 — Solidarité SIDA</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1a1a1a;font-size:14px;background:#f5f4f1}
+.app{max-width:780px;margin:0 auto;padding:1.5rem 1rem}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid #e0dbd3}
+.header-left .title{font-size:20px;font-weight:600}
+.header-left .sub{font-size:12px;color:#888;margin-top:2px}
+.tabs{display:flex;gap:0;margin-bottom:1.5rem;border-bottom:1px solid #e0dbd3}
+.tab{padding:8px 16px;font-size:13px;cursor:pointer;border:none;background:none;color:#888;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab.active{color:#1a1a1a;border-bottom:2px solid #1a1a1a;font-weight:500}
+.sec{display:none}.sec.active{display:block}
+.card{background:#fff;border:1px solid #e8e4dd;border-radius:12px;padding:1.25rem;margin-bottom:1rem}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.ct{font-size:15px;font-weight:600}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+label{font-size:12px;color:#666;display:block;margin-bottom:4px}
+input,select,textarea{width:100%;font-size:14px;border:1px solid #ddd;border-radius:6px;padding:7px 10px;background:#fff;color:#1a1a1a;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#1a1a1a}
+textarea{min-height:56px;resize:vertical}
+.f{margin-bottom:12px}
+.btn{font-size:13px;padding:7px 16px;border-radius:8px;cursor:pointer;border:1px solid #ddd;background:#fff;color:#1a1a1a;font-family:inherit}
+.btn:hover{background:#f5f4f1}
+.bp{background:#1a1a1a;color:#fff;border-color:transparent}
+.bp:hover{background:#333}
+.bd{color:#E24B4A;border-color:#fcc}.bd:hover{background:#fff5f5}
+.bsm{padding:4px 10px;font-size:12px}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500;white-space:nowrap}
+.bp0{background:#FAEEDA;color:#854F0B}.bn1{background:#E6F1FB;color:#185FA5}
+.bn2{background:#EAF3DE;color:#3B6D11}.bn3{background:#FAECE7;color:#993C1D}.bn4{background:#EEEDFE;color:#3C3489}
+.bok{background:#EAF3DE;color:#3B6D11}.brej{background:#FCEBEB;color:#A32D2D}
+.role-resp{background:#FAEEDA;color:#854F0B}.role-chef{background:#E6F1FB;color:#185FA5}
+.role-dir{background:#EAF3DE;color:#3B6D11}.role-pres{background:#FAECE7;color:#993C1D}
+.divl{border:none;border-top:1px solid #e8e4dd;margin:1rem 0}
+.slbl{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.steps{display:flex;margin-bottom:1.5rem}
+.step{flex:1;padding:9px 6px;font-size:11px;background:#f5f4f1;color:#888;text-align:center;border:1px solid #e0dbd3}
+.step:first-child{border-radius:8px 0 0 8px}.step:last-child{border-radius:0 8px 8px 0}
+.step.done{background:#EAF3DE;color:#3B6D11;border-color:#c5e0bb}
+.step.cur{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.tbox{background:#f5f4f1;border-radius:8px;padding:12px;margin-top:8px}
+.trow{display:flex;justify-content:space-between;font-size:14px;padding:3px 0}
+.vb{background:#f5f4f1;border-radius:8px;padding:12px;margin-top:10px}
+.empty{text-align:center;padding:1.5rem;color:#888;font-size:13px}
+.chip{font-size:11px;padding:2px 8px;border-radius:20px;background:#e8f0fe;color:#1a6ce8;display:inline-block;margin-left:6px}
+.fixed-tag{font-size:12px;padding:3px 10px;border-radius:20px;background:#f5f4f1;color:#666;border:1px solid #e0dbd3;display:inline-flex;align-items:center;gap:4px}
+.hint{font-size:11px;color:#1a6ce8;margin-top:3px;display:none}
+.warn-inline{font-size:11px;color:#E24B4A;margin-top:3px;display:none}
+.li-grid{display:grid;grid-template-columns:3fr 55px 90px 65px 36px;gap:5px;align-items:center;margin-bottom:6px}
+.li-head{display:grid;grid-template-columns:3fr 55px 90px 65px 36px;gap:5px;margin-bottom:4px}
+.li-head span{font-size:11px;color:#888}
+.ptable{width:100%;border-collapse:collapse;font-size:13px}
+.ptable th{background:#f5f4f1;padding:8px 10px;text-align:left;font-weight:600;font-size:12px;color:#666;border-bottom:1px solid #e0dbd3;white-space:nowrap}
+.ptable td{padding:8px 10px;border-bottom:1px solid #e8e4dd;vertical-align:middle}
+.ptable tr:last-child td{border-bottom:none}
+.ptable tr:hover td{background:#faf9f7}
+.bu-tags{display:flex;flex-wrap:wrap;gap:4px}
+.bu-tag{font-size:11px;padding:2px 7px;border-radius:20px;background:#f5f4f1;border:1px solid #e0dbd3;color:#666}
+.bu-checks{display:flex;gap:14px;margin-top:6px;flex-wrap:wrap}
+.bu-check{display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer}
+.bu-check input[type=checkbox]{width:auto;cursor:pointer;width:15px;height:15px}
+.recap-table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+.recap-table th{background:#f5f4f1;padding:7px 8px;text-align:left;font-weight:600;font-size:12px;border:1px solid #e0dbd3}
+.recap-table td{padding:7px 8px;border:1px solid #e0dbd3}
+.recap-table td:nth-child(2),.recap-table td:nth-child(3),.recap-table td:nth-child(4),.recap-table td:nth-child(5){text-align:right}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;z-index:1000;padding:1rem}
+.modal-box{background:#fff;border-radius:12px;border:1px solid #e0dbd3;padding:1.5rem;width:100%;max-width:460px;box-shadow:0 8px 32px rgba(0,0,0,.12)}
+.modal-title{font-size:15px;font-weight:600;margin-bottom:1.25rem}
+.no-warn{background:#FAEEDA;border:1px solid #FAC775;border-radius:8px;padding:10px 14px;font-size:13px;color:#854F0B;margin-bottom:12px;display:none}
+.seuil-row{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;margin-bottom:6px;font-size:13px}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.25rem}
+.kpi{border-radius:12px;padding:14px 16px;border:1px solid #e8e4dd}
+.kpi-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.kpi-value{font-size:22px;font-weight:600;line-height:1.1;margin-bottom:4px}
+.kpi-sub{font-size:11px}
+.kpi-total{background:#f5f4f1}.kpi-total .kpi-label,.kpi-total .kpi-sub{color:#888}
+.kpi-valide{background:#f4faf1;border-color:#c5e0bb}.kpi-valide .kpi-label{color:#2d7a1f}.kpi-valide .kpi-value{color:#27500A}.kpi-valide .kpi-sub{color:#3B6D11}
+.kpi-attente{background:#fff8f0;border-color:#fcd5a0}.kpi-attente .kpi-label{color:#854F0B}.kpi-attente .kpi-value{color:#633806}.kpi-attente .kpi-sub{color:#854F0B}
+.dash-filters{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
+.dash-filters select{width:auto;flex:1;min-width:140px}
+.filter-reset{font-size:12px;color:#888;cursor:pointer;padding:6px 10px;border-radius:8px;border:1px solid #e0dbd3;background:#fff;font-family:inherit;white-space:nowrap}
+.filter-hint{font-size:11px;color:#888;margin-bottom:8px;display:none}
+.act-btn{font-size:12px;padding:3px 9px;border-radius:6px;cursor:pointer;border:1px solid #ddd;background:#fff;color:#1a1a1a;font-family:inherit;margin-left:4px}
+.act-btn:hover{background:#f5f4f1}
+.act-btn.del{color:#E24B4A;border-color:#fcc}.act-btn.del:hover{background:#fff5f5}
+.val-level{background:#f5f4f1;border-radius:8px;padding:10px 14px;margin-bottom:8px}
+.val-level-title{font-size:11px;color:#888;margin-bottom:4px}
+
+.pj-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #e8e4dd;border-radius:8px;margin-bottom:6px;background:#faf9f7}
+.pj-icon{font-size:18px;flex-shrink:0}
+.pj-name{flex:1;font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pj-size{font-size:11px;color:#888;flex-shrink:0}
+.pj-open{font-size:12px;padding:3px 10px;border-radius:6px;cursor:pointer;border:1px solid #ddd;background:#fff;color:#1a6ce8;font-family:inherit;flex-shrink:0}
+.pj-open:hover{background:#e8f0fe}
+.pj-del{font-size:12px;padding:3px 8px;border-radius:6px;cursor:pointer;border:1px solid #fcc;background:#fff;color:#E24B4A;font-family:inherit;flex-shrink:0}
+.pj-del:hover{background:#fff5f5}
+.pj-drop{border:2px dashed #e0dbd3;border-radius:10px;padding:24px;text-align:center;color:#aaa;font-size:13px;margin-bottom:10px;transition:border-color .2s,background .2s}
+.pj-drop.drag-over{border-color:#1a6ce8;background:#f0f5ff;color:#1a6ce8}
+</style>
+<!-- MSAL pour authentification Microsoft 365 -->
+<script src="https://alcdn.msauth.net/browser/2.38.2/js/msal-browser.min.js"></script>
+</head>
+<body>
+<!-- Overlay chargement SP -->
+<div id="sp-loading" style="display:none;position:fixed;inset:0;background:rgba(255,255,255,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+  <div style="width:36px;height:36px;border:3px solid #e0dbd3;border-top-color:#1a1a1a;border-radius:50%;animation:spin 0.8s linear infinite"></div>
+  <div id="sp-loading-msg" style="font-size:14px;color:#888">Chargement...</div>
+</div>
+<!-- Bandeau erreur -->
+<div id="sp-error" style="display:none;position:fixed;top:12px;left:50%;transform:translateX(-50%);background:#FCEBEB;border:1px solid #fcc;border-radius:8px;padding:10px 20px;font-size:13px;color:#A32D2D;z-index:9998;max-width:480px;text-align:center"></div>
+<!-- Bandeau succès -->
+<div id="sp-success" style="display:none;position:fixed;top:12px;left:50%;transform:translateX(-50%);background:#EAF3DE;border:1px solid #c5e0bb;border-radius:8px;padding:10px 20px;font-size:13px;color:#3B6D11;z-index:9998;max-width:480px;text-align:center"></div>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+<div class="app">
+  <div class="header">
+    <div class="header-left">
+      <div class="title">Bons de commande</div>
+      <div class="sub">Solidarité SIDA — Solidays 2026 · <span id="current-user" style="color:#1a6ce8"></span></div>
+    </div>
+    <button class="btn bp" onclick="showForm()">+ Nouveau BDC</button>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('dashboard')">Tableau de bord</button>
+    <button class="tab" onclick="switchTab('list')">Tous les BDC</button>
+    <button class="tab" onclick="switchTab('suppliers')">Fournisseurs</button>
+    <button class="tab" onclick="switchTab('axes')">Axes analytiques</button>
+    <button class="tab" onclick="switchTab('params')">Paramètres</button>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="tab-dashboard" class="sec active">
+    <div class="dash-filters">
+      <select id="dash-bu" onchange="renderDashboard()"><option value="">Toutes les BU</option><option>Prod Longchamp</option><option>Prod Paris</option><optgroup label="— Hors Prod —"><option value="HORS_PROD_ALL">Hors Prod (toutes sous-cat.)</option><option>Hors Prod - Logistique</option><option>Hors Prod - Merch</option><option>Hors Prod - Tickets concessions</option><option>Hors Prod - Venue VPA</option><option>Hors Prod - RH</option></optgroup><option>Artistique</option><option>Communication</option></select>
+      <select id="dash-st" onchange="renderDashboard()"><option value="">Tous les statuts</option><option>En attente N1</option><option>En attente N2</option><option>En attente N3</option><option>En attente N4</option><option>Validé</option><option>Rejeté</option></select>
+      <button class="filter-reset" onclick="resetDash()">✕ Réinitialiser</button>
+    </div>
+    <div id="filter-hint" class="filter-hint"></div>
+    <div class="kpi-grid">
+      <div class="kpi kpi-total"><div class="kpi-label">Total BDC HT</div><div class="kpi-value" id="kpi-ht">0 €</div><div class="kpi-sub" id="kpi-nb">0 bon de commande</div></div>
+      <div class="kpi kpi-valide"><div class="kpi-label">Total engagé</div><div class="kpi-value" id="kpi-vht">0 €</div><div class="kpi-sub" id="kpi-vnb">0 BDC validé</div></div>
+      <div class="kpi kpi-attente"><div class="kpi-label">En attente</div><div class="kpi-value" id="kpi-aht">0 €</div><div class="kpi-sub" id="kpi-anb">0 BDC en cours</div></div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="ct">BDC récents</span><span id="dash-count" style="font-size:12px;color:#888"></span></div>
+      <div id="dash-list"><div class="empty">Aucun BDC créé. Commencez par ajouter des créateurs et valideurs dans Paramètres.</div></div>
+    </div>
+  </div>
+
+  <!-- LIST -->
+  <div id="tab-list" class="sec">
+    <div class="card">
+      <div class="ch">
+        <span class="ct">Tous les BDC</span>
+        <div style="display:flex;gap:8px">
+          <select style="width:auto" id="l-bu" onchange="renderList()"><option value="">Toutes BU</option><option>Prod Longchamp</option><option>Prod Paris</option><optgroup label="— Hors Prod —"><option>Hors Prod - Logistique</option><option>Hors Prod - Merch</option><option>Hors Prod - Tickets concessions</option><option>Hors Prod - Venue VPA</option><option>Hors Prod - RH</option></optgroup><option>Artistique</option><option>Communication</option></select>
+          <select style="width:auto" id="l-st" onchange="renderList()"><option value="">Tous statuts</option><option>En attente N1</option><option>En attente N2</option><option>En attente N3</option><option>En attente N4</option><option>Validé</option><option>Rejeté</option></select>
+        </div>
+      </div>
+      <div id="full-list"><div class="empty">Aucun BDC.</div></div>
+    </div>
+  </div>
+
+  <!-- SUPPLIERS -->
+  <div id="tab-suppliers" class="sec">
+    <div class="card">
+      <div class="ch"><span class="ct">Fournisseurs <span id="sup-count" class="chip">0</span></span><button class="btn bp bsm" onclick="openSupModal()">+ Ajouter</button></div>
+      <div style="margin-bottom:12px"><input id="sup-search" placeholder="Rechercher par nom, contact, email..." oninput="renderSuppliers()"></div>
+      <div style="overflow-x:auto">
+        <table class="ptable"><thead><tr><th>Fournisseur</th><th>Contact</th><th>Adresse</th><th>Email</th><th></th></tr></thead><tbody id="sup-tbody"></tbody></table>
+        <div id="sup-empty" class="empty" style="display:none">Aucun résultat.</div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- AXES ANALYTIQUES -->
+  <div id="tab-axes" class="sec">
+    <div class="card">
+      <div class="ch">
+        <span class="ct">Axes analytiques <span id="axe-count" class="chip">0</span></span>
+        <button class="btn bp bsm" onclick="openAxeModal()">+ Ajouter un code</button>
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:12px">Double cascade dans le formulaire BDC : BU → Budget → Code analytique. Modifiez ici le mapping par BU.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <select id="axe-filter-bu" onchange="renderAxeMapping()" style="width:auto;font-size:13px"><option value="">Toutes les BU</option></select>
+        <select id="axe-filter-budget" onchange="renderAxeMapping()" style="width:auto;font-size:13px"><option value="">Tous les budgets</option></select>
+        <button class="filter-reset" onclick="document.getElementById('axe-filter-bu').value='';document.getElementById('axe-filter-budget').value='';renderAxeMapping()">✕ Réinitialiser</button>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="ptable">
+          <thead><tr><th>Code</th><th>Libellé</th><th>Budget</th><th>BU autorisées</th><th></th></tr></thead>
+          <tbody id="axe-tbody"></tbody>
+        </table>
+        <div id="axe-empty" class="empty" style="display:none">Aucun code analytique pour ces filtres.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARAMS -->
+  <div id="tab-params" class="sec">
+    <div class="card">
+      <div class="ch"><span class="ct">Circuit de validation</span></div>
+      <div style="font-size:11px;font-weight:600;color:#888;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Tout BDC (moins de 100 000 € HT)</div>
+      <div class="seuil-row" style="background:#FAEEDA;border:1px solid #FAC775;margin-bottom:4px"><span style="font-weight:600;color:#854F0B;min-width:20px">N1</span><span style="flex:1"><strong>Responsable BDC</strong></span><span style="font-size:11px;padding:2px 8px;border-radius:20px;background:#fff3d4;color:#854F0B">Requis</span></div>
+      <div class="seuil-row" style="background:#E6F1FB;border:1px solid #B5D4F4;margin-bottom:12px"><span style="font-weight:600;color:#185FA5;min-width:20px">N2</span><span style="flex:1"><strong>Chef·fe de BU</strong></span><span style="font-size:11px;padding:2px 8px;border-radius:20px;background:#daeeff;color:#185FA5">Requis</span></div>
+      <div style="font-size:11px;font-weight:600;color:#888;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Entre 100 000 € et 300 000 € HT</div>
+      <div class="seuil-row" style="background:#f5f4f1;border:1px solid #e0dbd3;margin-bottom:4px"><span style="font-weight:600;color:#854F0B;min-width:20px">N1</span><span>Responsable BDC</span></div>
+      <div class="seuil-row" style="background:#f5f4f1;border:1px solid #e0dbd3;margin-bottom:4px"><span style="font-weight:600;color:#185FA5;min-width:20px">N2</span><span>Chef·fe de BU</span></div>
+      <div class="seuil-row" style="background:#EAF3DE;border:1px solid #C0DD97;margin-bottom:12px"><span style="font-weight:600;color:#3B6D11;min-width:20px">N3</span><span style="flex:1"><strong>Directeur·rice</strong></span><span style="font-size:11px;padding:2px 8px;border-radius:20px;background:#d5f0bb;color:#3B6D11">si > 100k</span></div>
+      <div style="font-size:11px;font-weight:600;color:#888;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Au-delà de 300 000 € HT</div>
+      <div class="seuil-row" style="background:#f5f4f1;border:1px solid #e0dbd3;margin-bottom:4px"><span style="font-weight:600;color:#854F0B;min-width:20px">N1</span><span>Responsable BDC</span></div>
+      <div class="seuil-row" style="background:#f5f4f1;border:1px solid #e0dbd3;margin-bottom:4px"><span style="font-weight:600;color:#185FA5;min-width:20px">N2</span><span>Chef·fe de BU</span></div>
+      <div class="seuil-row" style="background:#FAECE7;border:1px solid #F5C4B3"><span style="font-weight:600;color:#993C1D;min-width:20px">N4</span><span style="flex:1"><strong>Président·e</strong></span><span style="font-size:11px;padding:2px 8px;border-radius:20px;background:#fde0d4;color:#993C1D">si > 300k (sans N3)</span></div>
+      <div style="font-size:12px;color:#888;margin-top:12px">Au même niveau, n'importe lequel des valideurs assignés peut valider.</div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="ct">Créateurs de BDC <span id="count-c" class="chip">0</span></span><button class="btn bp bsm" onclick="openPersonModal('createur')">+ Ajouter</button></div>
+      <table class="ptable"><thead><tr><th>Nom</th><th>Prénom</th><th>Email</th><th>BU autorisées</th><th></th></tr></thead><tbody id="tbody-c"></tbody></table>
+      <div id="empty-c" class="empty">Aucun créateur. Ajoutez les personnes habilitées à créer des BDC.</div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="ct">Valideurs <span id="count-v" class="chip">0</span></span><button class="btn bp bsm" onclick="openPersonModal('valideur')">+ Ajouter</button></div>
+      <table class="ptable"><thead><tr><th>Nom</th><th>Prénom</th><th>Rôle</th><th>BU(s)</th><th></th></tr></thead><tbody id="tbody-v"></tbody></table>
+      <div id="empty-v" class="empty">Aucun valideur enregistré.</div>
+    </div>
+
+    <div class="card">
+      <div class="ch"><span class="ct">Aperçu circuit par BU</span></div>
+      <select id="preview-bu" onchange="renderPreview()" style="width:auto;margin-bottom:12px"><option value="">— Choisir une BU —</option><option>Prod Longchamp</option><option>Prod Paris</option><optgroup label="— Hors Prod —"><option>Hors Prod - Logistique</option><option>Hors Prod - Merch</option><option>Hors Prod - Tickets concessions</option><option>Hors Prod - Venue VPA</option><option>Hors Prod - RH</option></optgroup><option>Artistique</option><option>Communication</option></select>
+      <div id="preview-content"><div class="empty" style="padding:1rem">Sélectionnez une BU.</div></div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div id="section-form" style="display:none">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.25rem">
+      <button class="btn bsm" onclick="hideForm()">← Retour</button>
+      <div style="font-size:16px;font-weight:600" id="form-title">Nouveau BDC</div>
+    </div>
+    <div class="steps">
+      <div class="step cur" id="st1">1 · Identification</div>
+      <div class="step" id="st2">2 · Lignes</div>
+      <div class="step" id="st3">3 · Livraison</div>
+      <div class="step" id="st4">4 · Récapitulatif</div>
+    </div>
+    <div id="fs1">
+      <div id="no-warn" class="no-warn">Aucun créateur enregistré. Allez dans <strong>Paramètres</strong> pour en ajouter.</div>
+      <div class="card">
+        <div class="slbl">Informations générales</div>
+        <div class="g2">
+          <div class="f"><label>Description *</label><input id="f-desc" placeholder="Objet du bon de commande"></div>
+          <div class="f"><label>Créateur *</label><select id="f-createur" onchange="onCreateurChange()"><option value="">— Sélectionner —</option></select><div class="warn-inline" id="bu-warn">Ce créateur n'est pas habilité sur cette BU.</div></div>
+        </div>
+        <div class="f"><label>Dossier</label><div style="margin-top:4px"><span class="fixed-tag">Solidays 2026 <span style="font-size:10px;color:#aaa">· verrouillé</span></span></div></div>
+        <div class="f"><label>Business Unit *</label><select id="f-bu" onchange="onBUChange()"><option value="">— Sélectionner —</option><option>Prod Longchamp</option><option>Prod Paris</option><optgroup label="— Hors Prod —"><option>Hors Prod - Logistique</option><option>Hors Prod - Merch</option><option>Hors Prod - Tickets concessions</option><option>Hors Prod - Venue VPA</option><option>Hors Prod - RH</option></optgroup><option>Artistique</option><option>Communication</option></select></div>
+        <div class="divl"></div>
+        <div class="slbl">Axe analytique</div>
+        <div class="g2">
+          <div class="f"><label>Budget *</label><select id="f-budget" onchange="updateSousAxe()"><option value="">— Sélectionner —</option></select></div>
+          <div class="f"><label>Code analytique *</label><select id="f-axe" disabled><option value="">— Choisir le budget d'abord —</option></select></div>
+        </div>
+        <div class="divl"></div>
+        <div class="slbl">Fournisseur</div>
+        <div class="f"><label>Fournisseur *</label><select id="f-sup" onchange="onSupplierChange()"><option value="">— Sélectionner —</option></select></div>
+        <div class="g3">
+          <div class="f" style="grid-column:span 2"><label>Adresse</label><input id="f-sup-addr" placeholder="Adresse complète"><div class="hint" id="hint-addr">✦ Rempli automatiquement</div></div>
+          <div class="f"><label>Contact <span style="font-size:11px;font-style:italic;color:#aaa">(optionnel)</span></label><input id="f-sup-contact" placeholder="Prénom Nom"><div class="hint" id="hint-contact">✦ Rempli automatiquement</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- PJ / Devis -->
+    <div class="card">
+      <div class="ch">
+        <span class="ct">Pièces jointes <span id="pj-count" class="chip">0</span></span>
+        <label class="btn bp bsm" style="cursor:pointer;display:inline-block">
+          + Ajouter un fichier
+          <input type="file" id="pj-input" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" style="display:none" onchange="handlePJUpload(this)">
+        </label>
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px">Devis, bon de commande fournisseur, tout document justificatif — PDF, image, Word, Excel</div>
+      <div id="pj-list"><div style="font-size:13px;color:#aaa;font-style:italic">Aucune pièce jointe</div></div>
+    </div>
+      <div style="display:flex;justify-content:flex-end"><button class="btn bp" onclick="goStep(2)">Suivant →</button></div>
+    </div>
+    <div id="fs2" style="display:none">
+      <div class="card">
+        <div class="slbl">Lignes de commande</div>
+        <div class="li-head"><span>Libellé</span><span style="text-align:center">Qté</span><span style="text-align:right">Prix HT</span><span style="text-align:right">TVA</span><span></span></div>
+        <div id="line-items"></div>
+        <button class="btn bsm" onclick="addLine()" style="margin-top:6px">+ Ajouter une ligne</button>
+        <div class="tbox" style="margin-top:12px">
+          <div class="trow"><span style="color:#666">Total HT</span><span id="disp-ht" style="font-weight:600">0,00 €</span></div>
+          <div class="trow"><span style="color:#666">Total TVA</span><span id="disp-tva">0,00 €</span></div>
+          <div class="trow" style="font-size:15px"><span style="color:#666">Total TTC</span><span id="disp-ttc" style="font-weight:600">0,00 €</span></div>
+        </div>
+        <div id="val-preview2" class="vb" style="margin-top:10px"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between"><button class="btn" onclick="goStep(1)">← Retour</button><button class="btn bp" onclick="goStep(3)">Suivant →</button></div>
+    </div>
+    <div id="fs3" style="display:none">
+      <div class="card">
+        <div class="slbl">Adresse de livraison</div>
+        <div class="f"><textarea id="f-livraison" placeholder="Adresse de livraison complète..."></textarea></div>
+        <div class="divl"></div>
+        <div class="slbl">Conditions de règlement</div>
+        <div class="g2">
+          <div class="f"><label>Mode de paiement</label><select id="f-paiement"><option>Virement</option><option>Chèque</option><option>Carte bancaire</option><option>Prélèvement</option></select></div>
+          <div class="f">
+            <label>Paiement en</label>
+            <div style="display:flex;align-items:center;gap:8px">
+              <select id="f-nb-paiement" onchange="onNbPaiementChange()" style="width:80px">
+                <option value="1">1x</option>
+                <option value="2">2x</option>
+                <option value="3">3x</option>
+                <option value="4">4x</option>
+                <option value="5">5x</option>
+              </select>
+              <span style="font-size:13px;color:#666">fois</span>
+            </div>
+          </div>
+        </div>
+        <!-- Phasing simple (1x ou 2x) -->
+        <div id="phasing-simple" class="f">
+          <label>Échéance</label>
+          <select id="f-echeance"><option>À réception</option><option>30 jours</option><option>45 jours</option><option>60 jours</option><option>Fin de mois</option></select>
+        </div>
+        <!-- Phasing avancé (3x et +) -->
+        <div id="phasing-avance" style="display:none">
+          <div class="f">
+            <label>Type de phasing</label>
+            <div style="display:flex;gap:8px;margin-top:4px">
+              <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;color:#1a1a1a"><input type="radio" name="phasing-type" value="pct" checked onchange="onPhasingTypeChange()" style="width:auto"> En %</label>
+              <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;color:#1a1a1a"><input type="radio" name="phasing-type" value="eur" onchange="onPhasingTypeChange()" style="width:auto"> En €</label>
+            </div>
+          </div>
+          <div id="phasing-rows" style="margin-top:4px"></div>
+          <div id="phasing-total" style="font-size:12px;margin-top:6px;padding:6px 10px;border-radius:6px;background:#f5f4f1"></div>
+        </div>
+        <div class="f"><label>Conditions particulières</label><textarea id="f-conditions" placeholder="Informations complémentaires..."></textarea></div>
+      </div>
+      <div style="display:flex;justify-content:space-between"><button class="btn" onclick="goStep(2)">← Retour</button><button class="btn bp" onclick="goStep(4)">Suivant →</button></div>
+    </div>
+    <div id="fs4" style="display:none">
+      <div class="card">
+        <div class="slbl">Récapitulatif — aperçu BDC</div>
+        <div style="border:1px solid #e0dbd3;border-radius:8px;padding:16px;font-size:13px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+            <div><div style="font-weight:600;font-size:14px">Solidarité SIDA</div><div style="font-size:11px;color:#888">Association loi 1901</div></div>
+            <div style="text-align:right"><div id="r-sup-name" style="font-weight:600"></div><div id="r-sup-contact" style="font-size:12px;color:#888"></div><div id="r-sup-addr" style="font-size:12px;color:#888"></div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid #e0dbd3;margin-bottom:12px">
+            <div style="padding:6px 10px;border-right:1px solid #e0dbd3"><div style="font-size:10px;color:#888">Service</div><div id="r-bu" style="font-size:13px;font-weight:600"></div></div>
+            <div style="padding:6px 10px;border-right:1px solid #e0dbd3"><div style="font-size:10px;color:#888">Suivi par</div><div id="r-ref" style="font-size:13px;font-weight:600"></div></div>
+            <div style="padding:6px 10px"><div style="font-size:10px;color:#888">Dossier</div><div style="font-size:13px;font-weight:600">Solidays 2026</div></div>
+          </div>
+          <div style="font-weight:600;margin-bottom:8px" id="r-num"></div>
+          <table class="recap-table"><thead><tr><th>LIBELLÉ</th><th>Qté</th><th>Prix HT</th><th>Montant HT</th><th>TVA</th></tr></thead><tbody id="r-lines"></tbody></table>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+            <div style="border:1px solid #e0dbd3;border-radius:8px;padding:10px"><div style="font-size:11px;font-weight:600;margin-bottom:6px">Conditions de règlement</div><div id="r-paiement" style="font-size:12px"></div><div id="r-echeance" style="font-size:12px"></div></div>
+            <div style="border:1px solid #e0dbd3;border-radius:8px;padding:10px">
+              <div class="trow"><span style="color:#666">Montant HT</span><span id="r-ht" style="font-weight:600"></span></div>
+              <div class="trow"><span style="color:#666">Montant TVA</span><span id="r-tva"></span></div>
+              <div class="trow" style="font-size:14px"><span style="color:#666">Montant TTC</span><span id="r-ttc" style="font-weight:600"></span></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid #e0dbd3;border-radius:8px;margin-top:12px">
+            <div style="padding:8px 10px;border-right:1px solid #e0dbd3"><div style="font-size:10px;color:#888">Signature responsable service</div><div style="height:36px"></div></div>
+            <div style="padding:8px 10px;border-right:1px solid #e0dbd3"><div style="font-size:10px;color:#888">Signature de l'interlocuteur</div><div style="height:36px"></div></div>
+            <div style="padding:8px 10px"><div style="font-size:10px;color:#888">Signature responsable financier</div><div style="height:36px"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:12px" id="r-pj-section" style="display:none">
+          <div class="slbl" style="margin-bottom:8px">Pièces jointes</div>
+          <div id="r-pj-list"></div>
+        </div>
+        <div style="margin-top:12px"><div class="slbl">Circuit de validation pour ce BDC</div><div id="val-circuit"></div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between"><button class="btn" onclick="goStep(3)">← Retour</button><button class="btn bp" onclick="submitBDC()">Soumettre le BDC ↗</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal-bg" style="display:none">
+  <div class="modal-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal-box">
+      <div class="modal-title" id="modal-title">—</div>
+      <div id="modal-body"></div>
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:1.25rem">
+        <button class="btn bsm" onclick="closeModal()">Annuler</button>
+        <button class="btn bp bsm" id="modal-save-btn">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+
+var createurs=[
+  {nom:'',prenom:'Darianne',email:'',bus:['Prod Longchamp']},
+  {nom:'',prenom:'Justine',email:'',bus:['Hors Prod - Logistique','Hors Prod - Merch','Hors Prod - Tickets concessions','Hors Prod - Venue VPA','Hors Prod - RH']},
+];
+var valideurs=[
+  {nom:'Riou',prenom:'Lisa',email:'',role:'resp',bus:['Prod Longchamp']},
+  {nom:'Abed',prenom:'Amel',email:'',role:'resp',bus:['Prod Longchamp']},
+  {nom:'Noger',prenom:'Jeanne',email:'',role:'chef',bus:['Hors Prod - Logistique','Hors Prod - Merch','Hors Prod - Tickets concessions','Hors Prod - Venue VPA','Hors Prod - RH']},
+  {nom:'Garnier',prenom:'Sébastien',email:'',role:'chef',bus:['Prod Longchamp','Prod Paris','Hors Prod - Logistique','Hors Prod - Merch','Hors Prod - Tickets concessions','Hors Prod - Venue VPA','Hors Prod - RH','Artistique','Communication']},
+  {nom:'Menke',prenom:'Carole',email:'',role:'diradj',bus:['Prod Longchamp','Prod Paris','Hors Prod - Logistique','Hors Prod - Merch','Hors Prod - Tickets concessions','Hors Prod - Venue VPA','Hors Prod - RH','Artistique','Communication']},
+  {nom:'Barruet',prenom:'Luc',email:'',role:'dir',bus:['Prod Longchamp','Prod Paris','Hors Prod - Logistique','Hors Prod - Merch','Hors Prod - Tickets concessions','Hors Prod - Venue VPA','Hors Prod - RH','Artistique','Communication']},
+];
+var supplierList=[{name:'TILT',contact:'M. François Fouilhé',addr:'176 rue de la Vigne, 26400 Eurre',email:'francois.fouilhe@t-i-l-t.com'},{name:'NOVELTY',contact:'Julien Hagnere',addr:'Longjumeau, 91160',email:'j.hagnere@novelty.fr'},{name:'LOXAM EVENT',contact:'',addr:'89 avenue de la Grande Armée, Paris, 75219',email:''},{name:'FL STRUCTURE',contact:'',addr:'',email:''},{name:'DUSHOW PARIS',contact:'Gaetan Salmon',addr:'18 rue du Meunier, Roissy CDG, 95734',email:''},{name:'MAGNUM',contact:'Stephane Gaussin',addr:'99 rue de Paris, GONESSE, 95500',email:'cirque@magnum.fr'}];
+var bdcList=[];
+var editId=null;
+var lineCount=0;
+var modalType=null;
+var modalEditIdx=null;
+
+// ── CONFIGURATION SHAREPOINT ──
+const SP = {
+  siteUrl: 'https://solidaritesida.sharepoint.com/sites/BDCSolidays',
+  lists: {
+    bdc:          'BDC',
+    fournisseurs: 'Fournisseurs',
+    habilitations:'Habilitations'
+  },
+  clientId: '73557545-2c43-45ea-b666-cbfbb8c7f013', // À remplir après enregistrement Azure AD
+  scopes: ['https://solidaritesida.sharepoint.com/AllSites.Write']
+};
+
+// ── MSAL (Microsoft Authentication Library) ──
+// Chargé depuis CDN en fin de <head>
+var msalInstance = null;
+var currentUser  = null;
+var spToken      = null;
+
+async function initMSAL(){
+  const msalConfig = {
+    auth: {
+      clientId: SP.clientId,
+      authority: 'https://login.microsoftonline.com/c777b641-4004-40b7-86b7-4f2e620a49f7',
+      redirectUri: 'https://solidaritesida.sharepoint.com/sites/BDCSolidays/Outils/bdc_solidays_2026.html'
+    },
+    cache: { cacheLocation: 'sessionStorage' }
+  };
+  msalInstance = new msal.PublicClientApplication(msalConfig);
+  await msalInstance.initialize();
+  // Gère le retour de redirect
+  const resp = await msalInstance.handleRedirectPromise();
+  if(resp) currentUser = resp.account;
+  if(!currentUser){
+    const accounts = msalInstance.getAllAccounts();
+    currentUser = accounts[0] || null;
+  }
+}
+
+async function getToken(){
+  if(!msalInstance) return null;
+  const req = { scopes: SP.scopes, account: currentUser };
+  try {
+    const resp = await msalInstance.acquireTokenSilent(req);
+    spToken = resp.accessToken;
+    return spToken;
+  } catch(e){
+    // Token expiré → redirect
+    await msalInstance.acquireTokenRedirect(req);
+    return null;
+  }
+}
+
+async function spFetch(path, options={}){
+  const token = await getToken();
+  if(!token) return null;
+  const url = SP.siteUrl + '/_api/' + path;
+  const headers = {
+    'Authorization': 'Bearer ' + token,
+    'Accept': 'application/json;odata=nometadata',
+    'Content-Type': 'application/json;odata=nometadata',
+    ...(options.headers||{})
+  };
+  const res = await fetch(url, { ...options, headers });
+  if(!res.ok){ console.error('SP error', res.status, await res.text()); return null; }
+  if(res.status===204) return true; // No content (DELETE/UPDATE)
+  return res.json();
+}
+
+// ── SHAREPOINT CRUD ──
+async function spGetAll(list, select){
+  var qs = '$top=5000';
+  if(select) qs += '&$select=' + select;
+  const data = await spFetch("web/lists/getbytitle('"+list+"')/items?"+qs);
+  return data ? data.value : [];
+}
+async function spCreate(list, fields){
+  return spFetch(`web/lists/getbytitle('${list}')/items`, {
+    method:'POST', body: JSON.stringify(fields)
+  });
+}
+async function spUpdate(list, id, fields){
+  return spFetch(`web/lists/getbytitle('${list}')/items(${id})`, {
+    method:'PATCH',
+    headers:{'IF-MATCH':'*'},
+    body: JSON.stringify(fields)
+  });
+}
+async function spDelete(list, id){
+  return spFetch(`web/lists/getbytitle('${list}')/items(${id})`, {
+    method:'DELETE', headers:{'IF-MATCH':'*'}
+  });
+}
+
+// ── CHARGEMENT INITIAL DEPUIS SHAREPOINT ──
+async function loadFromSharePoint(){
+  showLoading('Connexion à SharePoint...');
+  try {
+    // Habilitations
+    const hab = await spGetAll(SP.lists.habilitations, 'Id,Title,Nom,Pr_x00e9_nom,Email,R_x00f4_le,BusinessUnits');
+    createurs = [];
+    valideurs  = [];
+    hab.forEach(function(h){
+      // Business Units : colonne choix multiple → SP renvoie tableau ou string selon config
+      var busRaw = h.BusinessUnits;
+      var bus = [];
+      if(Array.isArray(busRaw)) bus = busRaw;
+      else if(busRaw && typeof busRaw === 'object' && busRaw.results) bus = busRaw.results;
+      else if(typeof busRaw === 'string' && busRaw.length) bus = busRaw.split(';').map(function(s){return s.trim();}).filter(Boolean);
+      var role = h.R_x00f4_le || '';
+      var nom = h.Nom || h.Title || '';
+      var prenom = h.Pr_x00e9_nom || '';
+      var email = h.Email || '';
+      if(role === 'createur'){
+        createurs.push({spId:h.Id, nom:nom, prenom:prenom, email:email, bus:bus});
+      } else if(role){
+        valideurs.push({spId:h.Id, nom:nom, prenom:prenom, email:email, role:role, bus:bus});
+      }
+    });
+
+    // Fournisseurs
+    const fours = await spGetAll(SP.lists.fournisseurs, 'Id,Title,Contact,Adresse,Email');
+    supplierList = fours.map(function(f){
+      return {spId:f.Id, name:f.Title||'', contact:f.Contact||'', addr:f.Adresse||'', email:f.Email||''};
+    });
+    supplierList.sort(function(a,b){return a.name.localeCompare(b.name);});
+
+    // BDC
+    const bdcs = await spGetAll(SP.lists.bdc, 'Id,Title,Description,Cr_x00e9_ateur,BusinessUnit,Budgetanalytique,Codeanalytique,Libell_x00e9_analytique,Fournisseur,Adressefournisseur,Contactfournisseur,MontantHT,MontantTVA,MontantTTC,Lignes_x00e9_tail,Modepaiement,Nbpaiements,Phasing,Conditions,Adresselivraison,Statut,Historique');
+    bdcList = bdcs.map(function(b){
+      return {
+        id: b.Id, spId: b.Id,
+        num:   b.Title||'',
+        desc:  b.Description||'',
+        createurName: b.Cr_x00e9_ateur||'',
+        bu:    b.BusinessUnit||'',
+        budget:b.Budgetanalytique||'',
+        axeCode: b.Codeanalytique||'',
+        axeNom:  b.Libell_x00e9_analytique||'',
+        supplier: b.Fournisseur||'',
+        supAddr:  b.Adressefournisseur||'',
+        supContact: b.Contactfournisseur||'',
+        ht:  parseFloat(b.MontantHT)||0,
+        tva: parseFloat(b.MontantTVA)||0,
+        ttc: parseFloat(b.MontantTTC)||0,
+        lines: b.Lignes_x00e9_tail ? JSON.parse(b.Lignes_x00e9_tail) : [],
+        paiement: b.Modepaiement||'',
+        nbPaiement: b.Nbpaiements||1,
+        phasing: b.Phasing||'',
+        conditions: b.Conditions||'',
+        livraison: b.Adresselivraison||'',
+        status: b.Statut||'En attente N1',
+        date: b.Date_x0020_cr_x00e9_ation ? new Date(b.Date_x0020_cr_x00e9_ation).toLocaleDateString('fr-FR') : '',
+        historique: b.Historique ? JSON.parse(b.Historique) : [],
+        pj: [] // PJ gérées séparément via OneDrive dans v2
+      };
+    });
+
+    hideLoading();
+    // Rafraîchit l'UI
+    initCreateurSelect(); initSupplierSelect(); initBudgetSelect();
+    renderDashboard(); renderSuppliers(); renderCreateurs(); renderValideurs();
+    renderAxeMapping();
+    setTimeout(initPJZone, 100);
+    updateCurrentUserUI();
+
+  } catch(err){
+    hideLoading();
+    console.error('Erreur chargement SharePoint:', err);
+    showError('Impossible de charger les données SharePoint. Vérifiez votre connexion.');
+  }
+}
+
+// ── SAUVEGARDE VERS SHAREPOINT ──
+async function spSaveBDC(bdc){
+  // Mappe les champs JS vers les colonnes SharePoint
+  const fields = {
+    Title:                    bdc.num,
+    Description:              bdc.desc,
+    Cr_x00e9_ateur:          bdc.createurName,
+    BusinessUnit:             bdc.bu,
+    Budgetanalytique:         bdc.budget,
+    Codeanalytique:           bdc.axeCode,
+    Libell_x00e9_analytique: bdc.axeNom,
+    Fournisseur:              bdc.supplier,
+    Adressefournisseur:       bdc.supAddr||'',
+    Contactfournisseur:       bdc.supContact||'',
+    MontantHT:                bdc.ht,
+    MontantTVA:               bdc.tva,
+    MontantTTC:               bdc.ttc,
+    Lignes_x00e9_tail:        JSON.stringify(bdc.lines),
+    Modepaiement:             bdc.paiement||'',
+    Nbpaiements:              parseInt(bdc.nbPaiement)||1,
+    Phasing:                  bdc.echeance||'',
+    Conditions:               bdc.conditions||'',
+    Adresselivraison:         bdc.livraison||'',
+    Statut:                   bdc.status,
+    Historique:               JSON.stringify(bdc.historique||[]),
+  };
+  if(bdc.spId){
+    // Mise à jour
+    await spUpdate(SP.lists.bdc, bdc.spId, fields);
+    return bdc.spId;
+  } else {
+    // Création
+    const res = await spCreate(SP.lists.bdc, fields);
+    return res ? res.Id : null;
+  }
+}
+
+async function spSaveFournisseur(sup){
+  const fields = { Title: sup.name, Contact: sup.contact||'', Adresse: sup.addr||'', Email: sup.email||'' };
+  if(sup.spId){ await spUpdate(SP.lists.fournisseurs, sup.spId, fields); return sup.spId; }
+  const res = await spCreate(SP.lists.fournisseurs, fields);
+  return res ? res.Id : null;
+}
+
+async function spSaveHabilitation(person, spId){
+  const fields = {
+    Title:         (person.nom||person.prenom||'').trim(),
+    Nom:           person.nom||'',
+    Pr_x00e9_nom: person.prenom||'',
+    Email:         person.email||'',
+    R_x00f4_le:   person.role||'createur',
+    BusinessUnits: person.bus.join(';')
+  };
+  if(spId){ await spUpdate(SP.lists.habilitations, spId, fields); return spId; }
+  const res = await spCreate(SP.lists.habilitations, fields);
+  return res ? res.Id : null;
+}
+
+// ── EMAIL VIA POWER AUTOMATE ──
+// URL du flow Power Automate (à configurer après création du flow)
+const FLOW_URL = 'YOUR_POWER_AUTOMATE_FLOW_URL';
+
+async function sendValidationEmail(bdc, niveau){
+  if(!FLOW_URL || FLOW_URL === 'YOUR_POWER_AUTOMATE_FLOW_URL') return;
+  const circuit = getCircuit(bdc.bu, bdc.ht);
+  const niveauIdx = parseInt(niveau.replace('N','')) - 1;
+  const level = circuit[niveauIdx];
+  if(!level || !level.people.length) return;
+  const destinataires = level.people.map(p=>p.email).filter(Boolean);
+  if(!destinataires.length) return;
+  await fetch(FLOW_URL, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      destinataires: destinataires.join(';'),
+      niveau:        niveau,
+      bdcNum:        bdc.num,
+      bdcDesc:       bdc.desc,
+      bdcBU:         bdc.bu,
+      bdcFournisseur:bdc.supplier,
+      bdcMontantHT:  bdc.ht.toLocaleString('fr-FR',{maximumFractionDigits:0})+' € HT',
+      bdcCreateur:   bdc.createurName,
+      lienOutil:     window.location.href
+    })
+  });
+}
+
+// ── LOADING / ERROR UI ──
+function showLoading(msg){
+  var el=document.getElementById('sp-loading');
+  if(el){el.textContent=msg||'Chargement...';el.style.display='flex';}
+}
+function hideLoading(){
+  var el=document.getElementById('sp-loading');if(el)el.style.display='none';
+}
+function showSuccess(msg){
+  var el=document.getElementById('sp-success');
+  if(el){el.textContent=msg;el.style.display='block';setTimeout(function(){el.style.display='none';},3000);}
+}
+function showError(msg){
+  var el=document.getElementById('sp-error');
+  if(el){el.textContent=msg;el.style.display='block';setTimeout(function(){el.style.display='none';},6000);}
+}
+
+// ── UTILISATEUR CONNECTÉ ──
+function updateCurrentUserUI(){
+  if(!currentUser) return;
+  var el=document.getElementById('current-user');
+  if(el) el.textContent=currentUser.name||currentUser.username;
+  // Pré-sélectionne le créateur si son email correspond
+  var email=currentUser.username;
+  var idx=createurs.findIndex(function(c){return c.email===email;});
+  if(idx>=0){
+    var sel=document.getElementById('f-createur');
+    if(sel) sel.value=String(idx);
+    onCreateurChange();
+  }
+}
+
+// ── RÉFÉRENTIEL AXES ANALYTIQUES (modifiable dans Paramètres) ──
+const AXES_REF=[
+  {code:'F111',nom:'Tentes et Planchers',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F112',nom:'Chapiteaux',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F113',nom:'Autres structures',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F121',nom:'Structures scènes',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F122',nom:'Backline',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F123',nom:'Autres dépenses scènes',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F124',nom:'Son - scènes',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F125',nom:'Light - scènes',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F13',nom:'Ecrans',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F161',nom:'Aménagements et Décors',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F162',nom:'Mobilier',budget:'STRUCTURES & DISPOSITIFS'},
+  {code:'F212',nom:'État des lieux / Constat huissier',budget:'SITE'},
+  {code:'F213',nom:'Démontage et remontage mats golf',budget:'SITE'},
+  {code:'F214',nom:'Nettoyage',budget:'SITE'},
+  {code:'F215',nom:'Organismes de contrôle',budget:'SITE'},
+  {code:'F216',nom:'Aménagement du site',budget:'SITE'},
+  {code:'F221',nom:'Traversées des pistes',budget:'SITE'},
+  {code:'F241',nom:'Sanitaires et eaux',budget:'SITE'},
+  {code:'F261',nom:'Clôtures / Barrières / Blocs Stop',budget:'SITE'},
+  {code:'F271',nom:'Signalétique',budget:'SITE'},
+  {code:'F232',nom:'Consommables - Fuel',budget:'ENERGIE'},
+  {code:'F251',nom:'Gardiennage et Sécurité',budget:'SECURITE'},
+  {code:'F252',nom:'Prévention / Secours',budget:'SECURITE'},
+  {code:'F253',nom:'Contrôle Accès / Grand Public',budget:'SECURITE'},
+  {code:'F331',nom:'Matériel communication',budget:'LOGISTIQUE'},
+  {code:'F333',nom:'Matériels divers',budget:'LOGISTIQUE'},
+  {code:'F336',nom:'Autres frais de production',budget:'LOGISTIQUE'},
+  {code:'F337',nom:'Stockage containers et transport dock',budget:'LOGISTIQUE'},
+  {code:'F338',nom:'Accueil bénévoles',budget:'LOGISTIQUE'},
+  {code:'F339',nom:'Badges, Tickets, Bracelets',budget:'LOGISTIQUE'},
+  {code:'F330',nom:'Bungalows',budget:'LOGISTIQUE'},
+  {code:'F321',nom:'Catering',budget:'CATERING'},
+  {code:'F0272',nom:'Loges',budget:'CATERING'},
+  {code:'F311',nom:'Engins Techniques',budget:'ENGINS & VEHICULES'},
+  {code:'F332',nom:'Véhicules divers',budget:'ENGINS & VEHICULES'},
+  {code:'F411',nom:'Production Site',budget:'RH'},
+  {code:'F412',nom:'Roadies',budget:'RH'},
+  {code:'F422',nom:'Stagiaires',budget:'RH'},
+];
+// Mapping BU → budgets autorisés (null = tous)
+// Modifiable dans Paramètres → Axes analytiques
+var BU_MAPPING = {
+  'Prod Longchamp': ['STRUCTURES & DISPOSITIFS','SITE','ENERGIE','SECURITE','LOGISTIQUE','CATERING','ENGINS & VEHICULES','RH'],
+  'Prod Paris': ['STRUCTURES & DISPOSITIFS','SITE','ENERGIE','SECURITE','LOGISTIQUE','CATERING','ENGINS & VEHICULES','RH'],
+  'Hors Prod - Logistique': ['LOGISTIQUE','ENGINS & VEHICULES','RH'],
+  'Hors Prod - Merch': ['LOGISTIQUE'],
+  'Hors Prod - Tickets concessions': ['LOGISTIQUE'],
+  'Hors Prod - Venue VPA': ['SITE','LOGISTIQUE','SECURITE'],
+  'Hors Prod - RH': ['RH'],
+  'Artistique': ['STRUCTURES & DISPOSITIFS','CATERING','LOGISTIQUE','RH'],
+  'Communication': ['LOGISTIQUE'],
+};
+function getAxesForBU(bu){
+  var budgets=BU_MAPPING[bu]||Object.keys(BU_MAPPING).reduce(function(acc,k){BU_MAPPING[k].forEach(function(b){if(!acc.includes(b))acc.push(b);});return acc;},[]);
+  return AXES_REF.filter(function(a){return budgets.includes(a.budget);});
+}
+function getBudgetsForBU(bu){
+  var axes=getAxesForBU(bu);
+  return [...new Set(axes.map(function(a){return a.budget;}))];
+}
+const BUS=['Prod Longchamp','Prod Paris','Hors Prod - Logistique','Hors Prod - Merch','Hors Prod - Tickets concessions','Hors Prod - Venue VPA','Hors Prod - RH','Artistique','Communication'];
+// budgets computed via getBudgetsForBU()
+const ROLES=[{key:'resp',label:'Responsable BDC',badge:'role-resp'},{key:'chef',label:'Chef·fe de BU',badge:'role-chef'},{key:'diradj',label:'Directeur·rice adjoint·e',badge:'role-dir'},{key:'dir',label:'Directeur·rice',badge:'role-pres'}];
+
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function fmt(n){return n.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fmtK(n){if(Math.abs(n)>=1000000)return(n/1000000).toLocaleString('fr-FR',{maximumFractionDigits:1})+' M€';if(Math.abs(n)>=1000)return(n/1000).toLocaleString('fr-FR',{maximumFractionDigits:1})+' k€';return n.toLocaleString('fr-FR',{maximumFractionDigits:0})+' €';}
+function roleBadge(r){const ro=ROLES.find(x=>x.key===r)||{};return'<span class="badge '+( ro.badge||'')+'">'+(ro.label||r)+'</span>';}
+function getStatusBadge(s){const m={'En attente N1':'bp0','En attente N2':'bn1','En attente N3':'bn2','En attente N4':'bn4','Validé':'bok','Rejeté':'brej'};return'<span class="badge '+(m[s]||'bp0')+'">'+s+'</span>';}
+function isEnAttente(s){return s&&s.startsWith('En attente');}
+
+function getCircuit(bu,ht){
+  const levels=[];
+  levels.push({key:'N1',label:'N1 — Responsable BDC',people:valideurs.filter(v=>v.role==='resp'&&v.bus.includes(bu))});
+  levels.push({key:'N2',label:'N2 — Chef·fe de BU',people:valideurs.filter(v=>v.role==='chef'&&v.bus.includes(bu))});
+  if(ht>100000&&ht<=300000)levels.push({key:'N3',label:'N3 — Directeur·rice adjoint·e',people:valideurs.filter(v=>v.role==='diradj'&&v.bus.includes(bu))});
+  else if(ht>300000)levels.push({key:'N4',label:'N4 — Directeur·rice',people:valideurs.filter(v=>v.role==='dir'&&v.bus.includes(bu))});
+  return levels;
+}
+function renderCircuitHtml(bu,ht){
+  if(!bu)return'';
+  return getCircuit(bu,ht).map(function(l){
+    var names=l.people.length?l.people.map(function(p){return p.prenom+' '+p.nom;}).join(' <span style="color:#aaa">ou</span> '):'<span style="color:#E24B4A;font-style:italic">Aucun valideur assigné</span>';
+    return'<div class="val-level"><div class="val-level-title">'+l.label+'</div><div style="font-size:13px">'+names+'</div></div>';
+  }).join('');
+}
+
+function makeBtn(label,cls,handler){
+  var b=document.createElement('button');
+  b.textContent=label;b.className='act-btn'+(cls?' '+cls:'');
+  b.addEventListener('click',handler);return b;
+}
+
+// SUPPLIERS
+function openSupModal(idx){
+  modalType='sup';modalEditIdx=idx!==undefined?idx:null;
+  var s=idx!==undefined?supplierList[idx]:{name:'',contact:'',addr:'',email:''};
+  document.getElementById('modal-title').textContent=idx!==undefined?'Modifier '+s.name:'Ajouter un fournisseur';
+  document.getElementById('modal-body').innerHTML='<div class="g2"><div class="f"><label>Nom *</label><input id="m-sname" value="'+esc(s.name)+'" placeholder="Raison sociale"></div><div class="f"><label>Contact</label><input id="m-scontact" value="'+esc(s.contact)+'" placeholder="Prénom Nom"></div></div><div class="f"><label>Adresse</label><input id="m-saddr" value="'+esc(s.addr)+'" placeholder="Adresse complète"></div><div class="f"><label>Email</label><input id="m-semail" type="email" value="'+esc(s.email)+'" placeholder="email@fournisseur.com"></div>';
+  document.getElementById('modal-save-btn').onclick=saveSupModal;
+  document.getElementById('modal-bg').style.display='block';
+}
+function saveSupModal(){
+  var name=document.getElementById('m-sname').value.trim();
+  if(!name){alert('Nom obligatoire.');return;}
+  var entry={name:name.toUpperCase(),contact:document.getElementById('m-scontact').value.trim(),addr:document.getElementById('m-saddr').value.trim(),email:document.getElementById('m-semail').value.trim()};
+  if(modalEditIdx!==null)supplierList[modalEditIdx]=entry;
+  else{supplierList.push(entry);supplierList.sort(function(a,b){return a.name.localeCompare(b.name);});}
+  spSaveFournisseur(entry).then(function(newId){if(newId&&!entry.spId)entry.spId=newId;showSuccess('Fournisseur sauvegardé');});
+  closeModal();renderSuppliers();initSupplierSelect();
+}
+function renderSuppliers(){
+  var q=(document.getElementById('sup-search').value||'').toLowerCase();
+  var filtered=supplierList.map(function(s,i){return{s:s,i:i};}).filter(function(x){return x.s.name.toLowerCase().includes(q)||(x.s.contact||'').toLowerCase().includes(q)||(x.s.email||'').toLowerCase().includes(q);});
+  document.getElementById('sup-count').textContent=supplierList.length;
+  var tbody=document.getElementById('sup-tbody');var empty=document.getElementById('sup-empty');
+  tbody.innerHTML='';
+  if(!filtered.length){empty.style.display='block';return;}
+  empty.style.display='none';
+  var dash='<span style="color:#aaa;font-style:italic">—</span>';
+  filtered.forEach(function(x){
+    var s=x.s;var i=x.i;
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td style="font-weight:600">'+esc(s.name)+'</td><td style="color:#666">'+( esc(s.contact)||dash)+'</td><td style="color:#666;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+esc(s.addr)+'">'+(esc(s.addr)||dash)+'</td><td>'+(s.email?'<a href="mailto:'+esc(s.email)+'" style="color:#1a6ce8;text-decoration:none;font-size:12px">'+esc(s.email)+'</a>':dash)+'</td>';
+    var td=document.createElement('td');td.style.whiteSpace='nowrap';td.style.textAlign='right';
+    td.appendChild(makeBtn('✎','',function(ii){return function(){openSupModal(ii);};}(i)));
+    td.appendChild(makeBtn('×','del',function(ii){return function(){delSupplier(ii);};}(i)));
+    tr.appendChild(td);tbody.appendChild(tr);
+  });
+}
+function delSupplier(i){
+  if(confirm('Supprimer '+supplierList[i].name+' ?')){
+    var spId=supplierList[i].spId;
+    supplierList.splice(i,1);
+    if(spId)spDelete(SP.lists.fournisseurs,spId).then(function(){showSuccess('Fournisseur supprimé');});
+    renderSuppliers();initSupplierSelect();
+  }
+}
+
+// PERSONS
+function openPersonModal(type,idx){
+  modalType=type;modalEditIdx=idx!==undefined?idx:null;
+  var isVal=type==='valideur';var list=isVal?valideurs:createurs;
+  var p=idx!==undefined?list[idx]:{nom:'',prenom:'',email:'',bus:[],role:'resp'};
+  document.getElementById('modal-title').textContent=idx!==undefined?(isVal?'Modifier valideur':'Modifier créateur'):(isVal?'Ajouter un valideur':'Ajouter un créateur');
+  var roleOptions=ROLES.map(function(r){return'<option value="'+r.key+'"'+((p.role||'resp')===r.key?' selected':'')+'>'+r.label+'</option>';}).join('');
+  document.getElementById('modal-body').innerHTML='<div class="g2"><div class="f"><label>Nom *</label><input id="m-nom" value="'+esc(p.nom)+'" placeholder="Nom de famille"></div><div class="f"><label>Prénom *</label><input id="m-prenom" value="'+esc(p.prenom)+'" placeholder="Prénom"></div></div><div class="f"><label>Email</label><input id="m-email" type="email" value="'+esc(p.email||'')+'" placeholder="prenom.nom@solidarite-sida.org"></div>'+(isVal?'<div class="f"><label>Rôle *</label><select id="m-role">'+roleOptions+'</select></div>':'')+'<div class="f"><label>BU(s) autorisées *</label><div class="bu-checks">'+BUS.map(function(b){var bid='mbu-'+b.replace(/ /g,'-');return'<label class="bu-check"><input type="checkbox" id="'+bid+'" value="'+b+'"'+( (p.bus||[]).includes(b)?' checked':'')+'>'+b+'</label>';}).join('')+'</div></div>';
+  document.getElementById('modal-save-btn').onclick=savePersonModal;
+  document.getElementById('modal-bg').style.display='block';
+}
+function savePersonModal(){
+  var nom=document.getElementById('m-nom').value.trim();var prenom=document.getElementById('m-prenom').value.trim();
+  if(!nom||!prenom){alert('Nom et prénom obligatoires.');return;}
+  var bus=BUS.filter(function(b){return document.getElementById('mbu-'+b.replace(/ /g,'-')).checked;});
+  if(!bus.length){alert('Cochez au moins une BU.');return;}
+  var isVal=modalType==='valideur';var entry={nom:nom,prenom:prenom,email:document.getElementById('m-email').value.trim(),bus:bus};
+  if(isVal)entry.role=document.getElementById('m-role').value;
+  var list=isVal?valideurs:createurs;
+  if(modalEditIdx!==null)list[modalEditIdx]=entry;else list.push(entry);
+  closeModal();
+  spSaveHabilitation(entry,entry.spId||null).then(function(newId){if(newId&&!entry.spId)entry.spId=newId;showSuccess('Habilitation sauvegardée');});
+  if(isVal)renderValideurs();else{renderCreateurs();initCreateurSelect();}
+}
+function renderCreateurs(){
+  document.getElementById('count-c').textContent=createurs.length;
+  var tbody=document.getElementById('tbody-c');var empty=document.getElementById('empty-c');
+  tbody.innerHTML='';
+  if(!createurs.length){empty.style.display='block';return;}
+  empty.style.display='none';
+  createurs.forEach(function(p,i){
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td style="font-weight:600">'+esc(p.nom)+'</td><td>'+esc(p.prenom)+'</td><td style="color:#666;font-size:12px">'+esc(p.email||'')+'</td><td><div class="bu-tags">'+p.bus.map(function(b){return'<span class="bu-tag">'+b+'</span>';}).join('')+'</div></td>';
+    var td=document.createElement('td');td.style.whiteSpace='nowrap';td.style.textAlign='right';
+    td.appendChild(makeBtn('✎','',function(ii){return function(){openPersonModal('createur',ii);};}(i)));
+    td.appendChild(makeBtn('×','del',function(ii){return function(){delPerson('createur',ii);};}(i)));
+    tr.appendChild(td);tbody.appendChild(tr);
+  });
+}
+function renderValideurs(){
+  document.getElementById('count-v').textContent=valideurs.length;
+  var tbody=document.getElementById('tbody-v');var empty=document.getElementById('empty-v');
+  tbody.innerHTML='';
+  if(!valideurs.length){empty.style.display='block';return;}
+  empty.style.display='none';
+  valideurs.forEach(function(p,i){
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td style="font-weight:600">'+esc(p.nom)+'</td><td>'+esc(p.prenom)+'</td><td>'+roleBadge(p.role)+'</td><td><div class="bu-tags">'+p.bus.map(function(b){return'<span class="bu-tag">'+b+'</span>';}).join('')+'</div></td>';
+    var td=document.createElement('td');td.style.whiteSpace='nowrap';td.style.textAlign='right';
+    td.appendChild(makeBtn('✎','',function(ii){return function(){openPersonModal('valideur',ii);};}(i)));
+    td.appendChild(makeBtn('×','del',function(ii){return function(){delPerson('valideur',ii);};}(i)));
+    tr.appendChild(td);tbody.appendChild(tr);
+  });
+  renderPreview();
+}
+function delPerson(type,i){
+  var list=type==='createur'?createurs:valideurs;
+  if(confirm('Supprimer '+list[i].prenom+' '+list[i].nom+' ?')){
+    var spId=list[i].spId;
+    list.splice(i,1);
+    if(spId)spDelete(SP.lists.habilitations,spId).then(function(){showSuccess('Habilitation supprimée');});
+    if(type==='createur'){renderCreateurs();initCreateurSelect();}else renderValideurs();
+  }
+}
+function closeModal(){document.getElementById('modal-bg').style.display='none';}
+
+
+// ── MAPPING AXES ANALYTIQUES ──
+// axeMapping: liste d'objets {code, nom, budget, bus:[]}
+var axeMapping = AXES_REF.map(function(a){
+  var busList = Object.keys(BU_MAPPING).filter(function(bu){return BU_MAPPING[bu].includes(a.budget);});
+  return {code:a.code, nom:a.nom, budget:a.budget, bus:busList};
+});
+
+function getAllBudgets(){return [...new Set(AXES_REF.map(function(a){return a.budget;}))];}
+
+function renderAxeMapping(){
+  var buF=document.getElementById('axe-filter-bu')?document.getElementById('axe-filter-bu').value:'';
+  var budF=document.getElementById('axe-filter-budget')?document.getElementById('axe-filter-budget').value:'';
+  // Populate BU filter
+  var buSel=document.getElementById('axe-filter-bu');
+  if(buSel&&buSel.options.length<=1){
+    BUS.forEach(function(b){var o=document.createElement('option');o.value=b;o.textContent=b;buSel.appendChild(o);});
+  }
+  // Populate budget filter
+  var budSel=document.getElementById('axe-filter-budget');
+  if(budSel&&budSel.options.length<=1){
+    getAllBudgets().forEach(function(b){var o=document.createElement('option');o.value=b;o.textContent=b;budSel.appendChild(o);});
+  }
+  var filtered=axeMapping.filter(function(a){
+    var buOk=!buF||a.bus.includes(buF);
+    var budOk=!budF||a.budget===budF;
+    return buOk&&budOk;
+  });
+  document.getElementById('axe-count').textContent=axeMapping.length;
+  var tbody=document.getElementById('axe-tbody');
+  var empty=document.getElementById('axe-empty');
+  tbody.innerHTML='';
+  if(!filtered.length){empty.style.display='block';return;}
+  empty.style.display='none';
+  filtered.forEach(function(a,fi){
+    var realIdx=axeMapping.indexOf(a);
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td style="font-weight:600;font-size:12px">'+esc(a.code)+'</td>'
+      +'<td>'+esc(a.nom)+'</td>'
+      +'<td><span class="bu-tag">'+esc(a.budget)+'</span></td>'
+      +'<td><div class="bu-tags" style="max-width:240px">'+a.bus.map(function(b){return'<span class="bu-tag" style="font-size:10px">'+b+'</span>';}).join('')+'</div></td>';
+    var td=document.createElement('td');td.style.whiteSpace='nowrap';td.style.textAlign='right';
+    td.appendChild(makeBtn('✎','',function(idx){return function(){openAxeModal(idx);};}(realIdx)));
+    td.appendChild(makeBtn('×','del',function(idx){return function(){delAxe(idx);};}(realIdx)));
+    tr.appendChild(td);tbody.appendChild(tr);
+  });
+}
+
+function openAxeModal(idx){
+  var a=idx!==undefined?axeMapping[idx]:{code:'',nom:'',budget:'',bus:[]};
+  var budgets=getAllBudgets();
+  document.getElementById('modal-title').textContent=idx!==undefined?'Modifier code analytique':'Ajouter un code analytique';
+  document.getElementById('modal-body').innerHTML=
+    '<div class="g2"><div class="f"><label>Code *</label><input id="m-axe-code" value="'+esc(a.code)+'" placeholder="ex: F112"></div>'
+    +'<div class="f"><label>Libellé *</label><input id="m-axe-nom" value="'+esc(a.nom)+'" placeholder="ex: Chapiteaux"></div></div>'
+    +'<div class="f"><label>Budget *</label><select id="m-axe-budget"><option value="">— Sélectionner —</option>'
+    +budgets.map(function(b){return'<option value="'+b+'"'+(a.budget===b?' selected':'')+'>'+b+'</option>';}).join('')
+    +'</select></div>'
+    +'<div class="f"><label>BU autorisées *</label><div class="bu-checks" style="flex-wrap:wrap;gap:8px">'
+    +BUS.map(function(b){var bid='maxe-bu-'+b.replace(/[ \-]/g,'_');return'<label class="bu-check"><input type="checkbox" id="'+bid+'" value="'+b+'"'+(a.bus.includes(b)?' checked':'')+'>'+b+'</label>';}).join('')
+    +'</div></div>';
+  document.getElementById('modal-save-btn').onclick=function(){saveAxeModal(idx);};
+  document.getElementById('modal-bg').style.display='block';
+}
+
+function saveAxeModal(idx){
+  var code=document.getElementById('m-axe-code').value.trim();
+  var nom=document.getElementById('m-axe-nom').value.trim();
+  var budget=document.getElementById('m-axe-budget').value;
+  if(!code||!nom||!budget){alert('Code, libellé et budget sont obligatoires.');return;}
+  var bus=BUS.filter(function(b){var bid='maxe-bu-'+b.replace(/[ \-]/g,'_');var el=document.getElementById(bid);return el&&el.checked;});
+  if(!bus.length){alert('Cochez au moins une BU.');return;}
+  var entry={code:code,nom:nom,budget:budget,bus:bus};
+  if(idx!==undefined)axeMapping[idx]=entry;else axeMapping.push(entry);
+  rebuildBUMapping();
+  closeModal();renderAxeMapping();
+}
+
+function delAxe(idx){
+  if(confirm('Supprimer le code '+axeMapping[idx].code+' — '+axeMapping[idx].nom+' ?')){
+    axeMapping.splice(idx,1);rebuildBUMapping();renderAxeMapping();
+  }
+}
+
+function rebuildBUMapping(){
+  // Reset all BU budgets
+  BUS.forEach(function(bu){BU_MAPPING[bu]=[];});
+  axeMapping.forEach(function(a){
+    a.bus.forEach(function(bu){
+      if(!BU_MAPPING[bu])BU_MAPPING[bu]=[];
+      if(!BU_MAPPING[bu].includes(a.budget))BU_MAPPING[bu].push(a.budget);
+    });
+  });
+}
+
+function renderPreview(){
+  var bu=document.getElementById('preview-bu').value;var el=document.getElementById('preview-content');
+  if(!bu){el.innerHTML='<div class="empty" style="padding:1rem">Sélectionnez une BU.</div>';return;}
+  var cBU=createurs.filter(function(p){return p.bus.includes(bu);});
+  el.innerHTML='<div style="margin-bottom:14px"><div class="slbl">Créateurs autorisés</div><div style="font-size:13px">'+(cBU.length?cBU.map(function(p){return p.prenom+' '+p.nom;}).join(', '):'<span style="color:#888;font-style:italic">Aucun</span>')+'</div></div><div class="slbl" style="margin-bottom:6px">Circuit — moins de 100k</div>'+(renderCircuitHtml(bu,50000)||'<div style="font-size:12px;color:#888">—</div>')+'<div class="slbl" style="margin:12px 0 6px">Circuit — 100k à 300k</div>'+(renderCircuitHtml(bu,200000)||'—')+'<div class="slbl" style="margin:12px 0 6px">Circuit — plus de 300k</div>'+(renderCircuitHtml(bu,350000)||'—');
+}
+
+function initCreateurSelect(){
+  var sel=document.getElementById('f-createur');var cur=sel.value;
+  sel.innerHTML='<option value="">— Sélectionner —</option>';
+  createurs.forEach(function(p,i){var o=document.createElement('option');o.value=String(i);o.textContent=p.prenom+' '+p.nom;sel.appendChild(o);});
+  if(cur){var f=Array.from(sel.options).find(function(o){return o.value===cur;});if(f)sel.value=cur;}
+  var w=document.getElementById('no-warn');if(w)w.style.display=createurs.length===0?'block':'none';
+}
+function onCreateurChange(){
+  var idx=document.getElementById('f-createur').value;if(idx==='')return;
+  var p=createurs[parseInt(idx)];
+  if(p&&p.bus.length===1){document.getElementById('f-bu').value=p.bus[0];onBUChange();}
+  checkBUWarn();
+}
+function onBUChange(){checkBUWarn();var bu=document.getElementById('f-bu').value;updateSousAxeForBU(bu);updateValPreviewStep2();}
+function checkBUWarn(){
+  var idx=document.getElementById('f-createur').value;var bu=document.getElementById('f-bu').value;
+  var w=document.getElementById('bu-warn');if(!w)return;
+  if(idx===''||bu===''){w.style.display='none';return;}
+  var p=createurs[parseInt(idx)];w.style.display=p&&!p.bus.includes(bu)?'block':'none';
+}
+function initBudgetSelect(){
+  var bu=document.getElementById('f-bu')?document.getElementById('f-bu').value:'';
+  var s=document.getElementById('f-budget');s.innerHTML='<option value="">— Sélectionner —</option>';
+  getBudgetsForBU(bu).forEach(function(b){var o=document.createElement('option');o.value=b;o.textContent=b;s.appendChild(o);});
+}
+function updateSousAxeForBU(bu){
+  var s=document.getElementById('f-budget');var cur=s.value;
+  s.innerHTML='<option value="">— Sélectionner —</option>';
+  getBudgetsForBU(bu).forEach(function(b){var o=document.createElement('option');o.value=b;o.textContent=b;s.appendChild(o);});
+  if(cur&&getBudgetsForBU(bu).includes(cur))s.value=cur;
+  updateSousAxe();
+}
+function updateSousAxe(){
+  var b=document.getElementById('f-budget').value;var s=document.getElementById('f-axe');
+  if(!b){s.innerHTML='<option value="">— Choisir le budget d\'abord —</option>';s.disabled=true;return;}
+  s.disabled=false;s.innerHTML='<option value="">— Sélectionner un code —</option>';
+  var bu=document.getElementById('f-bu')?document.getElementById('f-bu').value:'';
+  getAxesForBU(bu).filter(function(a){return a.budget===b;}).forEach(function(a){var o=document.createElement('option');o.value=a.code;o.textContent=a.code+' · '+a.nom;s.appendChild(o);});
+}
+function initSupplierSelect(){
+  var s=document.getElementById('f-sup');var cur=s.value;
+  s.innerHTML='<option value="">— Sélectionner —</option>';
+  supplierList.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(sup){var o=document.createElement('option');o.value=sup.name;o.textContent=sup.name;s.appendChild(o);});
+  if(cur)s.value=cur;
+}
+function onSupplierChange(){
+  var name=document.getElementById('f-sup').value;var s=supplierList.find(function(x){return x.name===name;});
+  document.getElementById('f-sup-addr').value=s?s.addr||'':'';document.getElementById('f-sup-contact').value=s?s.contact||'':'';
+  document.getElementById('hint-addr').style.display=s&&s.addr?'block':'none';document.getElementById('hint-contact').style.display=s&&s.contact?'block':'none';
+}
+function addLine(){
+  lineCount++;var id=lineCount;var div=document.createElement('div');div.className='li-grid';div.id='li-'+id;
+  div.innerHTML='<input placeholder="Libellé de la prestation" oninput="updateValPreviewStep2()"><input type="number" min="0" value="1" style="text-align:center" oninput="updateValPreviewStep2()"><input type="number" min="0" step="0.01" placeholder="0,00" style="text-align:right" oninput="updateValPreviewStep2()"><select onchange="updateValPreviewStep2()" style="font-size:13px"><option value="0">0%</option><option value="2.1">2,1%</option><option value="5.5">5,5%</option><option value="10">10%</option><option value="20" selected>20%</option></select><button class="btn bsm bd" onclick="removeLine('+id+')" style="padding:3px 6px">×</button>';
+  document.getElementById('line-items').appendChild(div);
+}
+function removeLine(id){var el=document.getElementById('li-'+id);if(el)el.remove();updateValPreviewStep2();}
+function getTotals(){
+  var ht=0,tva=0;
+  document.querySelectorAll('#line-items .li-grid').forEach(function(row){
+    var ins=row.querySelectorAll('input');var qty=parseFloat(ins[1].value)||0;var price=parseFloat(ins[2].value)||0;var t=parseFloat(row.querySelector('select').value)||0;
+    ht+=qty*price;tva+=qty*price*t/100;
+  });
+  return{ht:ht,tva:tva,ttc:ht+tva};
+}
+function updateValPreviewStep2(){
+  var t=getTotals();
+  document.getElementById('disp-ht').textContent=fmt(t.ht)+' €';document.getElementById('disp-tva').textContent=fmt(t.tva)+' €';document.getElementById('disp-ttc').textContent=fmt(t.ttc)+' €';
+  var bu=document.getElementById('f-bu').value;var el=document.getElementById('val-preview2');
+  if(!bu){el.innerHTML='<div style="font-size:12px;color:#888">Sélectionnez une BU à l\'étape 1.</div>';return;}
+  el.innerHTML='<div class="slbl" style="margin-bottom:8px">Circuit de validation requis</div>'+renderCircuitHtml(bu,t.ht);
+}
+function goStep(n){
+  if(n===2&&(!document.getElementById('f-desc').value.trim()||document.getElementById('f-createur').value===''||!document.getElementById('f-bu').value||!document.getElementById('f-budget').value||!document.getElementById('f-axe').value||!document.getElementById('f-sup').value)){alert('Merci de remplir tous les champs obligatoires (*).');return;}
+  if(n===3&&!document.querySelectorAll('#line-items .li-grid').length){alert('Ajoutez au moins une ligne.');return;}
+  if(n===4){
+    var nb=parseInt(document.getElementById('f-nb-paiement').value)||1;
+    if(nb>=2){
+      var type=getPhasingType();var isPct=type==='pct';
+      var t=getTotals();var totalHT=t.ht;var totalTTC=t.ttc;
+      var sum=0;var allFilled=true;
+      for(var i=0;i<nb;i++){var v=parseFloat(document.getElementById('ph-val-'+i)?document.getElementById('ph-val-'+i).value:0)||0;if(!v)allFilled=false;sum+=v;}
+      if(!allFilled){alert('Merci de renseigner tous les montants du phasing.');return;}
+      if(isPct){if(Math.abs(sum-100)>0.01){alert('Le phasing en % doit être égal à 100 %.\nActuellement : '+sum.toFixed(1)+' %');return;}}
+      else{var ref=totalHT;if(Math.abs(sum-ref)>0.01){alert('Le phasing en € doit être égal au montant HT du BDC ('+ref.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' €).\nActuellement : '+sum.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' €');return;}}
+    }
+    buildRecap();
+  }
+  [1,2,3,4].forEach(function(i){document.getElementById('fs'+i).style.display=i===n?'block':'none';document.getElementById('st'+i).className='step'+(i<n?' done':i===n?' cur':'');});
+}
+function buildRecap(){
+  var cidx=parseInt(document.getElementById('f-createur').value);var createur=createurs[cidx]||{};
+  var bu=document.getElementById('f-bu').value;var t=getTotals();
+  document.getElementById('r-sup-name').textContent=document.getElementById('f-sup').value;
+  document.getElementById('r-sup-contact').textContent=document.getElementById('f-sup-contact').value||'';
+  document.getElementById('r-sup-addr').textContent=document.getElementById('f-sup-addr').value||'';
+  document.getElementById('r-bu').textContent=bu;
+  document.getElementById('r-ref').textContent=((createur.prenom||'')+' '+(createur.nom||'')).trim();
+  document.getElementById('r-num').textContent='Bon de commande N°'+(editId?bdcList.find(function(b){return b.id===editId;}).num:genNum());
+  var rows='';
+  document.querySelectorAll('#line-items .li-grid').forEach(function(row){
+    var ins=row.querySelectorAll('input');var label=ins[0].value;var qty=parseFloat(ins[1].value)||0;var price=parseFloat(ins[2].value)||0;var tvaR=row.querySelector('select').value;
+    if(label)rows+='<tr><td>'+esc(label)+'</td><td>'+qty+'</td><td>'+fmt(price)+' €</td><td>'+fmt(qty*price)+' €</td><td>'+tvaR+'%</td></tr>';
+  });
+  document.getElementById('r-lines').innerHTML=rows;
+  document.getElementById('r-ht').textContent=fmt(t.ht)+' €';document.getElementById('r-tva').textContent=fmt(t.tva)+' €';document.getElementById('r-ttc').textContent=fmt(t.ttc)+' €';
+  document.getElementById('r-paiement').textContent=document.getElementById('f-paiement').value;
+  document.getElementById('r-echeance').textContent=getPaiementLabel();
+  document.getElementById('val-circuit').innerHTML=renderCircuitHtml(bu,t.ht)||'<div style="color:#888;font-size:13px">Aucun valideur requis.</div>';
+  renderPJRecap();
+}
+function genNum(){var n=new Date();return n.getFullYear()+'-'+String(bdcList.length+1).padStart(4,'0');}
+function submitBDC(){
+  var t=getTotals();var axeCode=document.getElementById('f-axe').value;var axeObj=AXES_REF.find(function(a){return a.code===axeCode;})||{};
+  var cidx=parseInt(document.getElementById('f-createur').value);var createur=createurs[cidx]||{};var bu=document.getElementById('f-bu').value;
+  var supName=document.getElementById('f-sup').value;var supAddr=document.getElementById('f-sup-addr').value;var supContact=document.getElementById('f-sup-contact').value;
+  var si=supplierList.findIndex(function(s){return s.name===supName;});if(si>=0){if(supAddr)supplierList[si].addr=supAddr;if(supContact)supplierList[si].contact=supContact;}
+  var lines=[];document.querySelectorAll('#line-items .li-grid').forEach(function(row){var ins=row.querySelectorAll('input');var label=ins[0].value;if(!label)return;lines.push({label:label,qty:parseFloat(ins[1].value)||0,price:parseFloat(ins[2].value)||0,tva:row.querySelector('select').value});});
+  var circuit=getCircuit(bu,t.ht);
+  var now=new Date().toLocaleDateString('fr-FR');
+  var createurName=((createur.prenom||'')+' '+(createur.nom||'')).trim();
+  var prevStatus=null;var histLog=[];
+  if(editId){
+    var prev=bdcList.find(function(b){return b.id===editId;});
+    if(prev){prevStatus=prev.status;histLog=prev.historique||[];
+      histLog=histLog.concat([{date:now,msg:'Modifié par '+createurName+(isEnAttente(prevStatus)?' — circuit réinitialisé (était : '+prevStatus+')':' (était : '+prevStatus+')')}]);
+    }
+  }
+  var newStatus=editId&&(isEnAttente(prevStatus)||prevStatus==='Validé'||prevStatus==='Rejeté')?(circuit.length>0?'En attente N1':'Validé'):(circuit.length>0?'En attente N1':'Validé');
+  var bdc={id:editId||Date.now(),num:editId?bdcList.find(function(b){return b.id===editId;}).num:genNum(),desc:document.getElementById('f-desc').value,createurIdx:cidx,createurName:createurName,bu:bu,budget:document.getElementById('f-budget').value,axeCode:axeCode,axeNom:axeObj.nom||'',supplier:supName,supAddr:supAddr,supContact:supContact,livraison:document.getElementById('f-livraison').value,paiement:document.getElementById('f-paiement').value,echeance:getPaiementLabel(),nbPaiement:document.getElementById('f-nb-paiement').value,phasingData:getPhasingData(),conditions:document.getElementById('f-conditions').value,lines:lines,pj:pjList.slice(),ht:t.ht,tva:t.tva,ttc:t.ttc,status:newStatus,date:editId?bdcList.find(function(b){return b.id===editId;}).date:now,dateModif:editId?now:null,historique:histLog};
+  if(editId){var i=bdcList.findIndex(function(b){return b.id===editId;});bdcList[i]=bdc;}else bdcList.push(bdc);
+  // Sauvegarde SharePoint
+  spSaveBDC(bdc).then(function(spId){
+    if(spId&&!bdc.spId){bdc.spId=spId;}
+    showSuccess('BDC sauvegardé dans SharePoint');
+    // Email au premier valideur requis
+    sendValidationEmail(bdc,'N1');
+  }).catch(function(e){showError('Erreur sauvegarde SharePoint: '+e.message);});
+  editId=null;hideForm();
+}
+function advanceBDC(id){
+  var b=bdcList.find(function(x){return x.id===id;});if(!b)return;
+  var circuit=getCircuit(b.bu,b.ht);var statuses=circuit.map(function(_,i){return'En attente N'+(i+1);});var i=statuses.indexOf(b.status);
+  var prevSt=b.status;b.status=i>=0&&i<statuses.length-1?statuses[i+1]:'Validé';
+  b.historique=b.historique||[];b.historique.push({date:new Date().toLocaleDateString('fr-FR'),msg:prevSt+' → '+b.status});
+  // Sauvegarde + email niveau suivant
+  spSaveBDC(b).then(function(){showSuccess('Statut mis à jour');});
+  if(isEnAttente(b.status)) sendValidationEmail(b, b.status.replace('En attente ',''));
+  renderList();renderDashboard();
+}
+function rejectBDC(id){
+  if(confirm('Rejeter ce BDC ?')){
+    var b=bdcList.find(function(x){return x.id===id;});
+    if(b){b.historique=b.historique||[];b.historique.push({date:new Date().toLocaleDateString('fr-FR'),msg:'Rejeté (était : '+b.status+')'});b.status='Rejeté';spSaveBDC(b).then(function(){showSuccess('BDC rejeté');});}
+    renderList();renderDashboard();
+  }
+}
+function delBDC(id){
+  var b=bdcList.find(function(x){return x.id===id;});if(!b)return;
+  var label=b.num+' — '+b.desc+'\n'+b.ht.toLocaleString('fr-FR',{maximumFractionDigits:0})+' € HT · '+b.bu;
+  if(confirm('Supprimer définitivement ce BDC ?\n\n'+label+'\n\nCette action est irréversible.')){
+    bdcList=bdcList.filter(function(x){return x.id!==id;});renderList();renderDashboard();
+  }
+}
+function editBDC(id){
+  var b=bdcList.find(function(x){return x.id===id;});if(!b)return;
+  if(isEnAttente(b.status)){
+    if(!confirm('Ce BDC est actuellement en cours de validation ('+b.status+').\n\nLe modifier va réinitialiser le circuit — il repassera en N1.\n\nContinuer ?'))return;
+  }
+  editId=id;
+  // Show form without resetting fields (editId is set so showForm skips reset)
+  document.querySelectorAll('.sec').forEach(function(e){e.classList.remove('active');});
+  document.querySelectorAll('.tab').forEach(function(e){e.classList.remove('active');});
+  document.getElementById('section-form').style.display='block';
+  // Populate selects first
+  initCreateurSelect();initSupplierSelect();initBudgetSelect();
+  // Then fill all fields
+  document.getElementById('form-title').textContent='Modifier '+b.num;
+  document.getElementById('f-desc').value=b.desc;
+  document.getElementById('f-createur').value=String(b.createurIdx);
+  document.getElementById('f-bu').value=b.bu;
+  document.getElementById('f-budget').value=b.budget;
+  updateSousAxeForBU(b.bu);
+  setTimeout(function(){document.getElementById('f-axe').value=b.axeCode;},50);
+  document.getElementById('f-sup').value=b.supplier;
+  document.getElementById('f-sup-addr').value=b.supAddr||'';
+  document.getElementById('f-sup-contact').value=b.supContact||'';
+  pjList=(b.pj||[]).slice();renderPJList();
+  document.getElementById('f-livraison').value=b.livraison||'';
+  document.getElementById('f-paiement').value=b.paiement||'Virement';
+  document.getElementById('f-nb-paiement').value=b.nbPaiement||'1';
+  onNbPaiementChange();
+  if(b.phasingData)restorePhasingData(b.phasingData);
+  document.getElementById('f-conditions').value=b.conditions||'';
+  document.getElementById('line-items').innerHTML='';lineCount=0;
+  b.lines.forEach(function(l){
+    lineCount++;var lid=lineCount;var div=document.createElement('div');div.className='li-grid';div.id='li-'+lid;
+    div.innerHTML='<input value="'+esc(l.label)+'" oninput="updateValPreviewStep2()"><input type="number" value="'+l.qty+'" style="text-align:center" oninput="updateValPreviewStep2()"><input type="number" step="0.01" value="'+l.price+'" style="text-align:right" oninput="updateValPreviewStep2()"><select onchange="updateValPreviewStep2()" style="font-size:13px"><option value="0"'+(l.tva==='0'?' selected':'')+'>0%</option><option value="2.1"'+(l.tva==='2.1'?' selected':'')+'>2,1%</option><option value="5.5"'+(l.tva==='5.5'?' selected':'')+'>5,5%</option><option value="10"'+(l.tva==='10'?' selected':'')+'>10%</option><option value="20"'+(l.tva==='20'?' selected':'')+'>20%</option></select><button class="btn bsm bd" onclick="removeLine('+lid+')" style="padding:3px 6px">×</button>';
+    document.getElementById('line-items').appendChild(div);
+  });
+  updateValPreviewStep2();
+  setTimeout(initPJZone,100);
+  goStep(1);
+}
+function renderDashboard(){
+  var buF=document.getElementById('dash-bu').value;var stF=document.getElementById('dash-st').value;
+  var hint=document.getElementById('filter-hint');var parts=[];
+  if(buF)parts.push('BU : '+(buF==='HORS_PROD_ALL'?'Hors Prod (toutes)':buF));if(stF)parts.push('Statut : '+stF);
+  hint.textContent=parts.length?'Filtre actif — '+parts.join(' · '):'';hint.style.display=parts.length?'block':'none';
+  var all=bdcList.filter(function(b){
+    var buMatch=!buF||(buF==='HORS_PROD_ALL'?b.bu.startsWith('Hors Prod'):b.bu===buF);
+    return buMatch&&(!stF||b.status===stF);
+  });
+  var valides=all.filter(function(b){return b.status==='Validé';});var attente=all.filter(function(b){return isEnAttente(b.status);});
+  document.getElementById('kpi-ht').textContent=fmtK(all.reduce(function(s,b){return s+b.ht;},0));
+  document.getElementById('kpi-nb').textContent=all.length+' bon'+(all.length>1?'s':'')+' de commande';
+  document.getElementById('kpi-vht').textContent=fmtK(valides.reduce(function(s,b){return s+b.ht;},0));
+  document.getElementById('kpi-vnb').textContent=valides.length+' BDC validé'+(valides.length>1?'s':'');
+  document.getElementById('kpi-aht').textContent=fmtK(attente.reduce(function(s,b){return s+b.ht;},0));
+  document.getElementById('kpi-anb').textContent=attente.length+' BDC en cours';
+  document.getElementById('dash-count').textContent=parts.length&&all.length?all.length+' résultat'+(all.length>1?'s':''):'';
+  var el=document.getElementById('dash-list');var recent=all.slice().reverse().slice(0,8);
+  if(!recent.length){el.innerHTML='<div class="empty">'+(parts.length?'Aucun BDC pour ces filtres.':'Aucun BDC créé.')+'</div>';return;}
+  el.innerHTML=recent.map(function(b){return'<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #e8e4dd;font-size:13px"><div><div style="font-size:12px;color:#888">'+b.num+' · '+b.date+' · '+esc(b.createurName)+'</div><div style="font-weight:600">'+esc(b.desc)+'</div><div style="font-size:11px;color:#888">'+b.bu+' · '+b.axeCode+' · '+esc(b.supplier)+(b.pj&&b.pj.length?' · <span style="color:#1a6ce8">📎 '+b.pj.length+' PJ</span>':'')+'</div></div><div style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:4px">'+getStatusBadge(b.status)+'<div style="font-weight:600">'+b.ht.toLocaleString('fr-FR',{maximumFractionDigits:0})+' € HT</div></div></div>';}).join('');
+}
+function resetDash(){document.getElementById('dash-bu').value='';document.getElementById('dash-st').value='';renderDashboard();}
+function renderList(){
+  var buF=document.getElementById('l-bu').value;var stF=document.getElementById('l-st').value;
+  var data=bdcList.filter(function(b){return(!buF||b.bu===buF)&&(!stF||b.status===stF);}).reverse();
+  var el=document.getElementById('full-list');el.innerHTML='';
+  if(!data.length){el.innerHTML='<div class="empty">Aucun BDC.</div>';return;}
+  data.forEach(function(b){
+    var div=document.createElement('div');div.style.cssText='display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #e8e4dd;font-size:13px;flex-wrap:wrap;gap:8px';
+    div.innerHTML='<div style="flex:1;min-width:160px"><div style="font-size:12px;color:#888">'+b.num+' · '+b.date+' · '+esc(b.createurName)+'</div><div style="font-weight:600">'+esc(b.desc)+'</div><div style="font-size:11px;color:#888">'+b.bu+' · '+b.axeCode+' · '+esc(b.supplier)+(b.pj&&b.pj.length?' · <span style="color:#1a6ce8">📎 '+b.pj.length+' PJ</span>':'')+'</div></div>';
+    var acts=document.createElement('div');acts.style.cssText='display:flex;align-items:center;gap:5px;flex-shrink:0';
+    acts.innerHTML=getStatusBadge(b.status)+'<span style="font-weight:600;font-size:12px;min-width:80px;text-align:right">'+b.ht.toLocaleString('fr-FR',{maximumFractionDigits:0})+' € HT</span>';
+    acts.appendChild(makeBtn('✓','',function(id){return function(){advanceBDC(id);};}(b.id)));
+    acts.appendChild(makeBtn('✗','del',function(id){return function(){rejectBDC(id);};}(b.id)));
+    acts.appendChild(makeBtn('✎','',function(id){return function(){editBDC(id);};}(b.id)));
+    acts.appendChild(makeBtn('×','del',function(id){return function(){delBDC(id);};}(b.id)));
+    div.appendChild(acts);el.appendChild(div);
+  });
+}
+function showForm(){
+  document.querySelectorAll('.sec').forEach(function(e){e.classList.remove('active');});document.querySelectorAll('.tab').forEach(function(e){e.classList.remove('active');});
+  document.getElementById('section-form').style.display='block';
+  if(!editId){
+    document.getElementById('form-title').textContent='Nouveau BDC';
+    ['f-desc','f-sup-addr','f-sup-contact','f-livraison','f-conditions'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
+    ['hint-addr','hint-contact','bu-warn'].forEach(function(id){document.getElementById(id).style.display='none';});
+    pjList=[];renderPJList();
+    document.getElementById('f-bu').value='';document.getElementById('f-budget').value='';
+    document.getElementById('f-paiement').value='Virement';document.getElementById('f-nb-paiement').value='1';onNbPaiementChange();
+    updateSousAxe();document.getElementById('line-items').innerHTML='';lineCount=0;addLine();addLine();updateValPreviewStep2();goStep(1);
+  }
+  initCreateurSelect();initSupplierSelect();setTimeout(initPJZone,100);
+}
+function hideForm(){
+  document.getElementById('section-form').style.display='none';
+  document.getElementById('tab-dashboard').classList.add('active');document.querySelectorAll('.tab')[0].classList.add('active');renderDashboard();
+}
+function switchTab(t){
+  document.querySelectorAll('.tab').forEach(function(el,i){el.classList.toggle('active',['dashboard','list','suppliers','axes','params'][i]===t);});
+  document.querySelectorAll('.sec').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('tab-'+t).classList.add('active');document.getElementById('section-form').style.display='none';
+  if(t==='list')renderList();
+  if(t==='suppliers')renderSuppliers();
+  if(t==='dashboard')renderDashboard();
+  if(t==='axes')renderAxeMapping();
+  if(t==='params'){renderCreateurs();renderValideurs();}
+}
+
+// ── PIÈCES JOINTES ──
+var pjList = []; // {name, size, type, data (base64), id}
+
+function handlePJUpload(input){
+  var files=Array.from(input.files);
+  files.forEach(function(file){
+    var reader=new FileReader();
+    reader.onload=function(e){
+      pjList.push({id:Date.now()+Math.random(),name:file.name,size:file.size,type:file.type,data:e.target.result});
+      renderPJList();
+    };
+    reader.readAsDataURL(file);
+  });
+  input.value=''; // reset so same file can be re-added
+}
+
+function fmtSize(bytes){
+  if(bytes<1024)return bytes+'o';
+  if(bytes<1024*1024)return Math.round(bytes/1024)+'Ko';
+  return(bytes/1024/1024).toFixed(1)+'Mo';
+}
+
+function getPJIcon(type){
+  if(type.includes('pdf'))return'📄';
+  if(type.includes('image'))return'🖼';
+  if(type.includes('word')||type.includes('document'))return'📝';
+  if(type.includes('excel')||type.includes('sheet'))return'📊';
+  return'📎';
+}
+
+function renderPJList(){
+  var container=document.getElementById('pj-list');
+  var counter=document.getElementById('pj-count');
+  if(!container)return;
+  counter.textContent=pjList.length;
+  if(!pjList.length){container.innerHTML='<div style="font-size:13px;color:#aaa;font-style:italic">Aucune pièce jointe</div>';return;}
+  container.innerHTML='';
+  pjList.forEach(function(pj){
+    var div=document.createElement('div');div.className='pj-item';
+    div.innerHTML='<span class="pj-icon">'+getPJIcon(pj.type)+'</span><span class="pj-name" title="'+esc(pj.name)+'">'+esc(pj.name)+'</span><span class="pj-size">'+fmtSize(pj.size)+'</span>';
+    var btnOpen=document.createElement('button');btnOpen.className='pj-open';btnOpen.textContent='Ouvrir';
+    btnOpen.addEventListener('click',(function(p){return function(){
+      var a=document.createElement('a');a.href=p.data;a.download=p.name;a.target='_blank';a.click();
+    };})(pj));
+    var btnDel=document.createElement('button');btnDel.className='pj-del';btnDel.textContent='×';
+    btnDel.addEventListener('click',(function(pid){return function(){
+      pjList=pjList.filter(function(x){return x.id!==pid;});renderPJList();
+    };})(pj.id));
+    div.appendChild(btnOpen);div.appendChild(btnDel);
+    container.appendChild(div);
+  });
+}
+
+function renderPJRecap(){
+  var section=document.getElementById('r-pj-section');
+  var list=document.getElementById('r-pj-list');
+  if(!section||!list)return;
+  if(!pjList.length){section.style.display='none';return;}
+  section.style.display='block';
+  list.innerHTML='';
+  pjList.forEach(function(pj){
+    var div=document.createElement('div');div.className='pj-item';
+    div.innerHTML='<span class="pj-icon">'+getPJIcon(pj.type)+'</span><span class="pj-name">'+esc(pj.name)+'</span><span class="pj-size">'+fmtSize(pj.size)+'</span>';
+    var btnOpen=document.createElement('button');btnOpen.className='pj-open';btnOpen.textContent='Ouvrir';
+    btnOpen.addEventListener('click',(function(p){return function(){
+      var a=document.createElement('a');a.href=p.data;a.download=p.name;a.target='_blank';a.click();
+    };})(pj));
+    div.appendChild(btnOpen);list.appendChild(div);
+  });
+}
+
+function initPJZone(){
+  var card=document.getElementById('pj-list');
+  if(!card)return;
+  // Drag & drop support
+  var dropZone=card.parentElement;
+  dropZone.addEventListener('dragover',function(e){e.preventDefault();dropZone.classList.add('drag-over');});
+  dropZone.addEventListener('dragleave',function(){dropZone.classList.remove('drag-over');});
+  dropZone.addEventListener('drop',function(e){
+    e.preventDefault();dropZone.classList.remove('drag-over');
+    var files=Array.from(e.dataTransfer.files);
+    files.forEach(function(file){
+      var reader=new FileReader();
+      reader.onload=function(ev){
+        pjList.push({id:Date.now()+Math.random(),name:file.name,size:file.size,type:file.type,data:ev.target.result});
+        renderPJList();
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+}
+
+function onNbPaiementChange(){
+  var nb=parseInt(document.getElementById('f-nb-paiement').value)||1;
+  var simple=document.getElementById('phasing-simple');
+  var avance=document.getElementById('phasing-avance');
+  if(nb>=2){simple.style.display='none';avance.style.display='block';buildPhasingRows(nb);}
+  else{simple.style.display='block';avance.style.display='none';}
+}
+function onPhasingTypeChange(){
+  var nb=parseInt(document.getElementById('f-nb-paiement').value)||1;
+  buildPhasingRows(nb);
+}
+function getPhasingType(){
+  var r=document.querySelector('input[name="phasing-type"]:checked');
+  return r?r.value:'pct';
+}
+function buildPhasingRows(nb){
+  var type=getPhasingType();var isPct=type==='pct';
+  var container=document.getElementById('phasing-rows');container.innerHTML='';
+  var def=isPct?Math.round(100/nb):0;
+  for(var i=0;i<nb;i++){
+    var row=document.createElement('div');row.style.cssText='display:grid;grid-template-columns:80px 1fr 100px;gap:8px;align-items:center;margin-bottom:6px';
+    var lbl=document.createElement('span');lbl.style.cssText='font-size:12px;color:#666';lbl.textContent='Paiement '+(i+1);
+    var dateIn=document.createElement('input');dateIn.type='text';dateIn.placeholder='ex: à la commande, 30j, date...';dateIn.id='ph-date-'+i;dateIn.style.fontSize='13px';
+    var valIn=document.createElement('input');valIn.type='number';valIn.min='0';valIn.step=isPct?'1':'0.01';valIn.placeholder=isPct?'%':'€';valIn.id='ph-val-'+i;valIn.value=i===0?def:'';valIn.style.fontSize='13px';valIn.style.textAlign='right';valIn.oninput=updatePhasingTotal;
+    var unit=document.createElement('span');unit.style.cssText='font-size:12px;color:#888;position:absolute;right:8px;pointer-events:none';
+    var wrap=document.createElement('div');wrap.style.cssText='position:relative;display:flex;align-items:center;gap:4px';
+    wrap.appendChild(valIn);wrap.appendChild(document.createTextNode(isPct?' %':' €'));
+    row.appendChild(lbl);row.appendChild(dateIn);row.appendChild(wrap);
+    container.appendChild(row);
+  }
+  updatePhasingTotal();
+}
+function updatePhasingTotal(){
+  var nb=parseInt(document.getElementById('f-nb-paiement').value)||1;
+  var type=getPhasingType();var isPct=type==='pct';
+  var total=0;
+  for(var i=0;i<nb;i++){var el=document.getElementById('ph-val-'+i);var v=el?parseFloat(el.value)||0:0;total+=v;}
+  var el=document.getElementById('phasing-total');
+  if(isPct){
+    var ok=Math.abs(total-100)<0.01;
+    el.textContent='Total : '+total.toFixed(1)+' %'+(ok?' ✓':' — doit être égal à 100 %');
+    el.style.color=ok?'#3B6D11':'#E24B4A';el.style.background=ok?'#EAF3DE':'#FCEBEB';
+  } else {
+    var tRef=getTotals();var ref=tRef.ht;var ok2=ref>0&&Math.abs(total-ref)<0.01;
+    var refStr=ref>0?' (HT du BDC : '+ref.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' €)':'';
+    el.textContent='Total : '+total.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' €'+refStr+(ref>0?(ok2?' ✓':' — doit égaler le montant HT'):'');
+    el.style.color=ref>0?(ok2?'#3B6D11':'#E24B4A'):'#666';
+    el.style.background=ref>0?(ok2?'#EAF3DE':'#FCEBEB'):'#f5f4f1';
+  }
+}
+function getPaiementLabel(){
+  var nb=parseInt(document.getElementById('f-nb-paiement').value)||1;
+  if(nb<2)return'Paiement en 1x — '+document.getElementById('f-echeance').value;
+  var type=getPhasingType();var isPct=type==='pct';var parts=[];
+  for(var i=0;i<nb;i++){
+    var date=document.getElementById('ph-date-'+i)?document.getElementById('ph-date-'+i).value:'';
+    var val=document.getElementById('ph-val-'+i)?document.getElementById('ph-val-'+i).value:'';
+    if(val)parts.push((date||('Paiement '+(i+1)))+' : '+val+(isPct?' %':' €'));
+  }
+  return'Paiement en '+nb+'x\n'+parts.join('\n');
+}
+function getPhasingData(){
+  var nb=parseInt(document.getElementById('f-nb-paiement').value)||1;
+  if(nb<2)return null;
+  var type=getPhasingType();var rows=[];
+  for(var i=0;i<nb;i++){
+    rows.push({date:document.getElementById('ph-date-'+i)?document.getElementById('ph-date-'+i).value:'',val:document.getElementById('ph-val-'+i)?document.getElementById('ph-val-'+i).value:''});
+  }
+  return{type:type,rows:rows};
+}
+function restorePhasingData(data){
+  if(!data)return;
+  var radios=document.querySelectorAll('input[name="phasing-type"]');
+  radios.forEach(function(r){r.checked=r.value===data.type;});
+  var nb=parseInt(document.getElementById('f-nb-paiement').value)||1;
+  buildPhasingRows(nb);
+  if(data.rows)data.rows.forEach(function(r,i){
+    if(document.getElementById('ph-date-'+i))document.getElementById('ph-date-'+i).value=r.date||'';
+    if(document.getElementById('ph-val-'+i))document.getElementById('ph-val-'+i).value=r.val||'';
+  });
+  updatePhasingTotal();
+}
+// Démarre avec les données locales en attendant SP
+initBudgetSelect();initSupplierSelect();initCreateurSelect();
+renderDashboard();renderSuppliers();renderCreateurs();renderValideurs();
+setTimeout(initPJZone,100);
+// Connexion SharePoint
+if(typeof msal !== 'undefined' && SP.clientId !== 'YOUR_APP_CLIENT_ID'){
+  initMSAL().then(function(){
+    if(currentUser){ loadFromSharePoint(); }
+    else {
+      // Pas connecté → redirige vers login Microsoft
+      msalInstance.loginRedirect({scopes: SP.scopes});
+    }
+  }).catch(function(e){ console.warn('MSAL non disponible, mode local:', e); });
+} else {
+  console.info('Mode local — configurez SP.clientId pour activer SharePoint');
+}
+</script>
+</body>
+</html>
